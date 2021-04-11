@@ -18,30 +18,30 @@ public class ButtonMaster extends JPanel implements ActionListener
    // buttons are created with the below presets, edit as needed
    ButtonMaster()
    {
-      button = new JButton();
-      button.addActionListener(this);
+      this.button = new JButton();
+      this.button.addActionListener(this);
       // button coordinates and dimensions
-      button.setBounds(0, 0, 0, 0);
+      this.button.setBounds(0, 0, 0, 0);
       // removes focus indicator around button text
-      button.setFocusable(false);
+      this.button.setFocusable(false);
       // button background colour
-      button.setBackground(new Color(0, 0, 0, 0));
+      this.button.setBackground(new Color(0, 0, 0, 0));
       // set button border
-      button.setBorder(null);
+      this.button.setBorder(null);
       // set to false to have button greyed out
-      button.setEnabled(true);
-      
+      this.button.setEnabled(true);
+
       // text on button
-      button.setText("");
+      this.button.setText("");
       // button text decoration
-      button.setFont(new Font("arial", Font.BOLD, 10));
+      this.button.setFont(new Font("arial", Font.BOLD, 10));
       // text colour
-      button.setForeground(Color.BLACK);
+      this.button.setForeground(Color.BLACK);
       // add image to button - insert image address inside brackets
-      button.setIcon(null);
+      this.button.setIcon(null);
       // places button text relative to button icon
-      button.setHorizontalTextPosition(JButton.CENTER);
-      button.setVerticalTextPosition(JButton.CENTER);
+      this.button.setHorizontalTextPosition(JButton.CENTER);
+      this.button.setVerticalTextPosition(JButton.CENTER);
    }
 
    @Override

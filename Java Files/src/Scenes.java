@@ -4,18 +4,18 @@ public class Scenes
    private int sceneID;
    // these 2 strings represent the storyText and imageTitle respectively
    private String[] sceneContent = new String[2];
-   
+
    public Scenes(int sceneID, MainPanel mainPanel)
    {
-      this.sceneID = sceneID;      
+      this.sceneID = sceneID;
       sceneSelect();
    }
-   
+
    public int getSceneID()
    {
       return this.sceneID;
    }
-   
+
    public String[] getSceneContent()
    {
       return this.sceneContent;

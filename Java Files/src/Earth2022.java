@@ -4,7 +4,7 @@ public class Earth2022 extends Canvas
 {
    // I don't know what this does, but it complains without it
    private static final long serialVersionUID = 1L;
-   
+
    // game window resolution
    public static final int windowWidth = 1280;
    public static final int windowHeight = 720;
@@ -42,7 +42,6 @@ public class Earth2022 extends Canvas
          {
             delta--;
             tick();
-            System.out.print(mainPanel.getSceneID());
          }
       }
    }
@@ -50,7 +49,7 @@ public class Earth2022 extends Canvas
    // method to run every frame to check for updates
    public void tick()
    {
-      
+
    }
 
    public static void main(String args[])

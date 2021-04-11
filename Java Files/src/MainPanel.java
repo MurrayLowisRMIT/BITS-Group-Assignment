@@ -42,7 +42,7 @@ public class MainPanel
       this.scenes = new Scenes(this.sceneID, this);
 
       System.out.print(this.scenes.getSceneContent()[0]);
-      // define border for the main text area
+      // define border around the main text area
       int borderWeight = 3;
       Border border = BorderFactory.createLineBorder(Color.GREEN, borderWeight);
 
