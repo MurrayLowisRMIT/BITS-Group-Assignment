@@ -53,7 +53,7 @@ public class MainPanel
       this.textArea.setForeground(Color.RED);
       this.textArea.setBackground(Color.BLACK);
       // get character image for scene if applicable
-      // this.textArea.setIcon(new ImageIcon(this.scenes.getSceneContent()[1];));
+      this.textArea.setIcon(new ImageIcon(this.scenes.getSceneContent()[1]));
       // set location of text relative to image
       this.textArea.setHorizontalTextPosition(JLabel.RIGHT);
       this.textArea.setVerticalTextPosition(JLabel.TOP);

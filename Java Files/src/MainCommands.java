@@ -29,7 +29,7 @@ public class MainCommands extends ButtonMaster
       if (e.getSource() == this.button)
       {
          System.out.print("\nThe hobo bites you\n");
-         this.mainPanel.setSceneID(2);
+         this.mainPanel.setSceneID(3);
       }
    }
 }
