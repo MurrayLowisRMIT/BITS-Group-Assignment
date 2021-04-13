@@ -61,6 +61,7 @@ public class MainPanelCommands extends JPanel implements ActionListener
    {
       if (e.getSource() == this.button)
       {
+         Globals.content.removeAll();
          Globals.staticSceneID = this.setSceneID;
       }
    }
@@ -91,6 +92,7 @@ public class MainPanelCommands extends JPanel implements ActionListener
    {
       this.button.setBounds(500, 200, 120, 120);
       this.button.setText("Placate the hobo");
+      this.button.setIcon(new ImageIcon("Happy hobo.png"));
       this.setSceneID = 2;
    }
 }

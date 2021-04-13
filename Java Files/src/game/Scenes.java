@@ -11,6 +11,11 @@ public class Scenes
 
    public Scenes()
    {
+      updateScene();
+   }
+
+   public void updateScene()
+   {
       switch (Globals.staticSceneID)
       {
          case 0:
@@ -42,9 +47,7 @@ public class Scenes
    public Scenes s0()
    {
       this.text = "You wake up to find a hobo rummaging through your rucksack";
-      this.characterImage = new ImageIcon("Angry hobo.png");
-      this.characterImage = null;
-      int[] mainPanelCommands = { 0, 1 };
+      int[] mainPanelCommands = { 0 };
       // int[] sceneCommands = { 0 };
       createCommands(mainPanelCommands);
       return this;
@@ -55,7 +58,7 @@ public class Scenes
       this.text = "Good sir! I challenge thee to fisticuffs.";
       this.characterImage = new ImageIcon("Angry hobo.png");
       this.mainPanelCommands = null;
-      int[] mainPanelCommands = { 0, 1 };
+      int[] mainPanelCommands = { 1 };
       // int[] sceneCommands = { 0 };
       createCommands(mainPanelCommands);
       return this;

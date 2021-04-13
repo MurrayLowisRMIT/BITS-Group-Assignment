@@ -1,22 +1,24 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Container;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-// this contains all the variables and instances that are common across the game
+// this contains all the variables and instances common across the game
 public class Globals
 {
    // contains all panels, labels and buttons overlaid over the screen
    public static Overlay staticOverlay;
-   // the ID number of the current scene
-   public static int staticSceneID;
    // the full database of all scenes and their content
    public static Scenes scenes;
+   // the ID number of the current scene
+   public static int staticSceneID;
 
    // create window for the game to run in
    public static JFrame window = new JFrame("Earth2022");
+   public static Container content = window.getContentPane();
    // game window resolution
    public static final int windowWidth = 1280;
    public static final int windowHeight = 720;
@@ -32,7 +34,6 @@ public class Globals
       // starting scene
       staticSceneID = 0;
       scenes = new Scenes();
-      mainPanel = new JPanel();
 
       // makes program actually shutdown when closed
       window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -48,7 +49,9 @@ public class Globals
       window.setVisible(true);
       window.getContentPane().setBackground(Color.RED);
 
+      mainPanel = new JPanel();
       // allows manually specifying where panels are placed
+      // perhaps change this to 'flow' later
       mainPanel.setLayout(null);
       mainPanel.setBackground(Color.BLACK);
       // panel position and dimensions
@@ -56,8 +59,9 @@ public class Globals
                           windowHeight - mainPanelHeight,
                           mainPanelWidth,
                           mainPanelHeight);
-      // output mainPanelOverlay panels to window
+      // output mainPanel to window
       window.add(Globals.mainPanel);
+      
+      earth2022.run();
    }
-
 }

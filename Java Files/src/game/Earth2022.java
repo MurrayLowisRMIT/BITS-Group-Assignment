@@ -4,22 +4,19 @@ public class Earth2022
 {
    public Earth2022()
    {
-      // create the overlay which we define in Globals
       new Globals(this);
-      
+   }
+
+   public void run()
+   {
       // record current time in nanoseconds
       long previous = System.nanoTime();
-      int framerate = 5;
+      int framerate = 30;
       double frameDuration = 1000000000 / framerate;
       double delta = 0;
       // this is probably bad coding - a problem for later if there's time
       while (true)
       {
-         // add background images
-         // Standard buttons in main text area as objects - inventory/save etc
-         // Interactable on screen buttons as array of objects
-         // Image included in interactable object or just area of background?
-
          long current = System.nanoTime();
          delta += (current - previous) / frameDuration;
          previous = current;
@@ -32,10 +29,12 @@ public class Earth2022
       }
    }
 
-   // method to run every frame to check for updates
+   // method to run with every frame update - currently buggy
    public void tick()
    {
       Globals.staticOverlay.updateScene();
+      Globals.scenes.updateScene();
+      System.out.print(Globals.scenes.text + "\n");
       System.out.print(Globals.staticSceneID + "\n");
    }
 
