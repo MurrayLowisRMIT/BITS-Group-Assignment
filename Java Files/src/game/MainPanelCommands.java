@@ -33,7 +33,7 @@ public class MainPanelCommands extends JPanel implements ActionListener
       // removes focus indicator around button text
       this.button.setFocusable(false);
       // button background colour
-      this.button.setBackground(new Color(255, 0, 255, 20));
+      this.button.setBackground(new Color(255, 0, 255, 255));
       // set button border
       this.button.setBorder(null);
       // set to false to have button greyed out
@@ -76,14 +76,17 @@ public class MainPanelCommands extends JPanel implements ActionListener
          case 1:
             p1();
             break;
+         case 2:
+            p2();
+            break;
       }
    }
 
    public void p0()
    {
       this.button.setBounds(200, 200, 120, 120);
-      this.button.setText("Fight the hobo");
-       this.button.setIcon(new ImageIcon("Angry hobo.png"));
+      this.button.setText("Climb a mountain");
+      this.button.setIcon(null);
       this.setSceneID = 1;
 
    }
@@ -91,8 +94,16 @@ public class MainPanelCommands extends JPanel implements ActionListener
    public void p1()
    {
       this.button.setBounds(500, 200, 120, 120);
-      this.button.setText("Placate the hobo");
-      this.button.setIcon(new ImageIcon("Happy hobo.png"));
+      this.button.setText("Jump");
+      this.button.setIcon(null);
       this.setSceneID = 2;
+   }
+
+   public void p2()
+   {
+      this.button.setBounds(800, 200, 120, 120);
+      this.button.setText("Fall");
+      this.button.setIcon(null);
+      this.setSceneID = 0;
    }
 }

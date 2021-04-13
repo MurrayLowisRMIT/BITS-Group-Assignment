@@ -26,16 +26,17 @@ public class Earth2022
             // run the 'tick()' method at specified framerate
             tick();
          }
+         Globals.staticOverlay.updateScene();
+         Globals.scenes.updateScene();
+         System.out.print(Globals.scenes.text + "\n");
+         System.out.print(Globals.staticSceneID + "\n");      
       }
    }
 
    // method to run with every frame update - currently buggy
    public void tick()
    {
-      Globals.staticOverlay.updateScene();
-      Globals.scenes.updateScene();
-      System.out.print(Globals.scenes.text + "\n");
-      System.out.print(Globals.staticSceneID + "\n");
+      
    }
 
    public static void main(String args[])

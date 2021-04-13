@@ -6,6 +6,7 @@ public class Scenes
 {
    protected String text;
    protected ImageIcon characterImage;
+   protected ImageIcon backgroundImage;
    protected MainPanelCommands[] mainPanelCommands;
    // protected SceneCommands[] sceneCommands;
 
@@ -16,6 +17,7 @@ public class Scenes
 
    public void updateScene()
    {
+      this.mainPanelCommands = null;
       switch (Globals.staticSceneID)
       {
          case 0:
@@ -46,7 +48,9 @@ public class Scenes
 
    public Scenes s0()
    {
-      this.text = "You wake up to find a hobo rummaging through your rucksack";
+      this.text = "You are in a dusty room";
+      this.characterImage = new ImageIcon("Happy hobo.png");
+      this.backgroundImage = new ImageIcon("Trees.png");
       int[] mainPanelCommands = { 0 };
       // int[] sceneCommands = { 0 };
       createCommands(mainPanelCommands);
@@ -55,9 +59,9 @@ public class Scenes
 
    public Scenes s1()
    {
-      this.text = "Good sir! I challenge thee to fisticuffs.";
-      this.characterImage = new ImageIcon("Angry hobo.png");
-      this.mainPanelCommands = null;
+      this.text = "You are on top of a mountain";
+      this.characterImage = null;
+      this.backgroundImage = null;
       int[] mainPanelCommands = { 1 };
       // int[] sceneCommands = { 0 };
       createCommands(mainPanelCommands);
@@ -66,10 +70,10 @@ public class Scenes
 
    public Scenes s2()
    {
-      this.text = "I guess you can keep your eyelids.";
-      this.characterImage = new ImageIcon("Happy hobo.png");
-      this.mainPanelCommands = null;
-      int[] mainPanelCommands = { 0, 1 };
+      this.text = "You are in outer space";
+      this.characterImage = null;
+      this.backgroundImage = null;
+      int[] mainPanelCommands = { 2 };
       // int[] sceneCommands = { 0 };
       createCommands(mainPanelCommands);
       return this;

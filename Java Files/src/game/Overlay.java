@@ -5,6 +5,7 @@ import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 public class Overlay
@@ -12,7 +13,7 @@ public class Overlay
 
    public Overlay(Earth2022 earth2022)
    {
-      
+
    }
 
    public void updateScene()
@@ -49,7 +50,19 @@ public class Overlay
                           Globals.mainPanelWidth - 20,
                           (Globals.mainPanelHeight - 10) / 2);
 
-      // add textField to mainPanelOverlay
+      // set background image for scene
+      JLabel background = new JLabel();
+      // set single colour background in case no image or image fails to load
+      background.setBackground(Color.BLACK);
+      // set background image
+      background.setIcon(Globals.scenes.backgroundImage);
+      background.setBounds(0,
+                           0,
+                           Globals.windowWidth,
+                           Globals.windowHeight);
+
+      // add to mainPanelOverlay
+      Globals.window.add(background);
       Globals.mainPanel.add(textField);
    }
 
