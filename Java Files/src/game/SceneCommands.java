@@ -13,8 +13,10 @@ public class SceneCommands extends JPanel
    // I don't know what this does, but it complains without it
    private static final long serialVersionUID = 7810649496279389274L;
 
-   protected JButton button = new JButton();;
+   protected JButton button = new JButton();
+   // scene to change to when button is pressed
    private int setSceneID;
+   // ID number of the selected button
    private int commandID;
 
    public SceneCommands(int globalSceneCommandID, int localSceneArrayID)
@@ -26,7 +28,7 @@ public class SceneCommands extends JPanel
       // removes focus indicator around button text
       this.button.setFocusable(false);
       // button background colour
-      this.button.setBackground(new Color(255, 0, 255, 255));
+      this.button.setBackground(Color.WHITE);
       // set button border
       this.button.setBorder(null);
       // set to false to have button greyed out
@@ -53,7 +55,7 @@ public class SceneCommands extends JPanel
             Globals.update();
          }
       });
-      
+
       // adds button to scene
       Globals.sceneCommands[localSceneArrayID] = this.button;
    }
@@ -62,7 +64,7 @@ public class SceneCommands extends JPanel
    {
       switch (this.commandID)
       {
-         case 0:            
+         case 0:
             sc0();
             break;
          case 1:
@@ -74,6 +76,8 @@ public class SceneCommands extends JPanel
       }
    }
 
+   // BUTTON CONTENT BEGINS HERE-----------------------------------------------
+
    public void sc0()
    {
       this.button.setBounds(800, 100, 120, 50);
@@ -84,7 +88,7 @@ public class SceneCommands extends JPanel
 
    public void sc1()
    {
-      this.button.setBounds(300, Globals.mainPanelHeight / 2 + 16, 120, 50);
+      this.button.setBounds(570, 100, 120, 50);
       this.button.setText("Go back inside");
       this.button.setIcon(null);
       this.setSceneID = 0;
@@ -92,7 +96,7 @@ public class SceneCommands extends JPanel
 
    public void sc2()
    {
-      this.button.setBounds(500, Globals.mainPanelHeight / 2 + 16, 120, 50);
+      this.button.setBounds(1000, 200, 120, 50);
       this.button.setText("Venture into the desert");
       this.button.setIcon(null);
       this.setSceneID = 2;

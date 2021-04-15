@@ -1,11 +1,8 @@
 package game;
 
-import java.awt.Color;
 import java.awt.Container;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 // this contains all the variables and instances common across the game
@@ -21,7 +18,7 @@ public class Globals
    public static int staticSceneID = 0;
    // the list of buttons in current scene
    public static JButton[] mainPanelCommands;
-    public static JButton[] sceneCommands;
+   public static JButton[] sceneCommands;
 
    // game window resolution
    public static final int windowWidth = 1280;
@@ -48,13 +45,14 @@ public class Globals
       update();
    }
 
-   // method to run with every player action
+   // method to run with every player action to refresh screen
    public static void update()
    {
+      // clears current screen contents
       Globals.content.removeAll();
+      // updates all scene data based on user choices
       scenes.updateScene();
+      // redraws scene
       ((JPanel) Globals.content).repaint();
-      System.out.print(Globals.scenes.text + "\n"); // delete later
-      System.out.print(Globals.staticSceneID + "\n"); // delete later
    }
 }

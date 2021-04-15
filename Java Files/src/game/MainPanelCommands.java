@@ -15,8 +15,8 @@ public class MainPanelCommands extends JPanel
    // I don't know what this does, but it complains without it
    private static final long serialVersionUID = 7810649496279389274L;
 
-   protected JButton button = new JButton();;
-   private int setSceneID;
+   protected JButton button = new JButton();
+   // ID number of the selected button
    private int commandID;
 
    public MainPanelCommands(int globalPanelCommandID, int localPanelArrayID)
@@ -28,7 +28,7 @@ public class MainPanelCommands extends JPanel
       // removes focus indicator around button text
       this.button.setFocusable(false);
       // button background colour
-      this.button.setBackground(new Color(255, 0, 255, 255));
+      this.button.setBackground(Color.WHITE);
       // set button border
       this.button.setBorder(null);
       // set to false to have button greyed out
@@ -51,11 +51,10 @@ public class MainPanelCommands extends JPanel
       {
          public void actionPerformed(ActionEvent event)
          {
-            Globals.staticSceneID = setSceneID;
             Globals.update();
          }
       });
-      
+
       // adds button to scene
       Globals.mainPanelCommands[localPanelArrayID] = this.button;
    }
@@ -64,35 +63,47 @@ public class MainPanelCommands extends JPanel
    {
       switch (this.commandID)
       {
-         case 0:            
-            p0();
+         case 0:
+            mc0();
             break;
          case 1:
-            p1();
+            mc1();
             break;
          case 2:
-            p2();
+            mc2();
+            break;
+         case 3:
+            mc3();
             break;
       }
    }
 
-   public void p0()
+   // BUTTON CONTENT BEGINS HERE-----------------------------------------------
+   
+   public void mc0()
    {
       this.button.setBounds(100, Globals.mainPanelHeight / 2 + 16, 120, 50);
       this.button.setText("Talk to the hobo");
       this.button.setIcon(null);
    }
 
-   public void p1()
+   public void mc1()
    {
       this.button.setBounds(300, Globals.mainPanelHeight / 2 + 16, 120, 50);
       this.button.setText("Rob the hobo");
       this.button.setIcon(null);
    }
 
-   public void p2()
+   public void mc2()
    {
       this.button.setBounds(500, Globals.mainPanelHeight / 2 + 16, 120, 50);
       this.button.setIcon(new ImageIcon("Inventory.png"));
+   }
+
+   public void mc3()
+   {
+      this.button.setBounds(Globals.mainPanelWidth / 2 - 60,
+                            Globals.mainPanelHeight / 2 + 16, 120, 50);
+      this.button.setIcon(new ImageIcon("Restart.png"));
    }
 }
