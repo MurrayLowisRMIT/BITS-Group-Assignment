@@ -6,17 +6,10 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.border.Border;
 
 public class Overlay
 {
-
-   public Overlay(Earth2022 earth2022)
-   {
-
-   }
-
-   public void updateScene()
+   public Overlay()
    {
       mainPanelOverlay();
       sceneOverlay();
@@ -39,9 +32,7 @@ public class Overlay
       textField.setVerticalTextPosition(JLabel.TOP);
       textField.setOpaque(true);
       // define border around the main text area
-      int borderWeight = 3;
-      Border border = BorderFactory.createLineBorder(Color.GREEN, borderWeight);
-      textField.setBorder(border);
+      textField.setBorder(BorderFactory.createLineBorder(Color.CYAN, 3));
       // sets textField location relative to housing panel
       textField.setVerticalAlignment(JLabel.TOP);
       textField.setHorizontalAlignment(JLabel.LEFT);
@@ -50,54 +41,55 @@ public class Overlay
                           Globals.mainPanelWidth - 20,
                           (Globals.mainPanelHeight - 10) / 2);
 
-      // set background image for scene
+      // set up main panel which includes the text area and main commands
+      JPanel mainPanel = new JPanel(null);
+      // allows manually specifying where panels are placed
+      // perhaps change this to 'flow' later
+      mainPanel.setLayout(null);
+      mainPanel.setBackground(Color.BLACK);
+      // panel position and dimensions
+      mainPanel.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2,
+                          Globals.windowHeight - Globals.mainPanelHeight,
+                          Globals.mainPanelWidth,
+                          Globals.mainPanelHeight);
+      mainPanel.add(textField);
+
+      // add buttons
+      for (int i = 0; i < Globals.mainPanelCommands.length; i++)
+      {
+         if (Globals.mainPanelCommands[i] != null)
+         {
+            mainPanel.add(Globals.mainPanelCommands[i]);
+         }
+      }
+
+      // output overlay
+      Globals.content.add(mainPanel);
+   }
+
+   public void sceneOverlay()
+   {
+      // add background image
       JLabel background = new JLabel();
-      // set single colour background in case no image or image fails to load
-      background.setBackground(Color.BLACK);
-      // set background image
       background.setIcon(Globals.scenes.backgroundImage);
+      // default background colour in case no image added or in case of error
+      background.setBackground(Color.RED);
+      background.setOpaque(true);
       background.setBounds(0,
                            0,
                            Globals.windowWidth,
                            Globals.windowHeight);
 
-      // add to mainPanelOverlay
-      Globals.window.add(background);
-      Globals.mainPanel.add(textField);
-   }
+      // add buttons
+      for (int i = 0; i < Globals.sceneCommands.length; i++)
+      {
+         if (Globals.sceneCommands[i] != null)
+         {
+            Globals.content.add(Globals.sceneCommands[i]);
+         }
+      }
 
-   public void sceneOverlay()
-   {
-      // this.scenes = new SceneBuilder(this.sceneID, this);
-      // this.overlayType = "scenery";
-      //
-      // System.out.print(this.scenes.getSceneContent()[0]);
-      //
-      // // get image for button
-      // this.textField.setIcon(new ImageIcon(this.scenes.getSceneContent()[1]));
-      // this.textField.setOpaque(true);
-      // this.textField.setBorder(null);
-      // // sets textField location relative to housing panel
-      // this.textField.setVerticalAlignment(JLabel.TOP);
-      // this.textField.setHorizontalAlignment(JLabel.LEFT);
-      // // set coordinates for button
-      // this.textField.setBounds(100, 100, 50, 50);
-      //
-      // // add textField to panel
-      // this.overlay.add(this.textField);
-      // // allows manually specifying where panels are placed
-      // this.overlay.setLayout(null);
-      // this.overlay.setBackground(Color.BLACK);
-      // // panel position and dimensions
-      // this.overlay.setBounds(0,
-      // 0,
-      // Earth2022.windowWidth,
-      // Earth2022.windowHeight);
-      //
-      // // output mainPanelOverlay panels to window
-      // Earth2022.window.add(this.overlay);
-      //
-      // // add main panel buttons here (move above when it starts behaving)
-      // new MainPanelCommands(this, 1);
+      // output overlay
+      Globals.content.add(background);
    }
 }

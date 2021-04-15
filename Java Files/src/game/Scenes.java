@@ -1,6 +1,7 @@
 package game;
 
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 
 public class Scenes
 {
@@ -8,16 +9,17 @@ public class Scenes
    protected ImageIcon characterImage;
    protected ImageIcon backgroundImage;
    protected MainPanelCommands[] mainPanelCommands;
-   // protected SceneCommands[] sceneCommands;
+   protected int[] mainPanelCommandsList;
+   protected SceneCommands[] sceneCommands;
+   protected int[] sceneCommandsList;
 
    public Scenes()
    {
-      updateScene();
+
    }
 
    public void updateScene()
    {
-      this.mainPanelCommands = null;
       switch (Globals.staticSceneID)
       {
          case 0:
@@ -30,52 +32,53 @@ public class Scenes
             s2();
             break;
       }
+      new Overlay();
    }
 
-   public Scenes getSceneContent()
+   private void createCommands(int[] mainPanelCommandsList)
    {
-      return this;
-   }
-
-   private void createCommands(int[] mainPanelCommands)
-   {
-      this.mainPanelCommands = new MainPanelCommands[mainPanelCommands.length];
-      for (int i = 0; i < mainPanelCommands.length; i++)
+      Globals.mainPanelCommands = new JButton[mainPanelCommandsList.length];
+      this.mainPanelCommands = new MainPanelCommands[mainPanelCommandsList.length];
+      for (int i = 0; i < mainPanelCommandsList.length; i++)
       {
-         this.mainPanelCommands[i] = new MainPanelCommands(mainPanelCommands[i]);
+         this.mainPanelCommands[i] =
+                  new MainPanelCommands(mainPanelCommandsList[i], i);
+      }
+
+      Globals.sceneCommands = new JButton[sceneCommandsList.length];
+      this.sceneCommands = new SceneCommands[sceneCommandsList.length];
+      for (int i = 0; i < sceneCommandsList.length; i++)
+      {
+         this.sceneCommands[i] = new SceneCommands(sceneCommandsList[i], i);
       }
    }
 
-   public Scenes s0()
+   public void s0()
    {
-      this.text = "You are in a dusty room";
+      this.text = "You are in a dusty room with a sleeping hobo";
+      this.backgroundImage = new ImageIcon("Dusty room.png");
+      this.mainPanelCommandsList = new int[] { 0, 1, 2 };
+      this.sceneCommandsList = new int[] { 0 };
+      createCommands(this.mainPanelCommandsList);
+   }
+
+   public void s1()
+   {
+      this.text = "You go outside. There is a desert";
       this.characterImage = new ImageIcon("Happy hobo.png");
-      this.backgroundImage = new ImageIcon("Trees.png");
-      int[] mainPanelCommands = { 0 };
-      // int[] sceneCommands = { 0 };
-      createCommands(mainPanelCommands);
-      return this;
+      this.backgroundImage = null;
+      this.mainPanelCommandsList = new int[] { 0, 1, 2 };
+      this.sceneCommandsList = new int[] { 1, 2 };
+      createCommands(mainPanelCommandsList);
    }
 
-   public Scenes s1()
+   public void s2()
    {
-      this.text = "You are on top of a mountain";
+      this.text = "You die in the desert";
       this.characterImage = null;
       this.backgroundImage = null;
-      int[] mainPanelCommands = { 1 };
-      // int[] sceneCommands = { 0 };
-      createCommands(mainPanelCommands);
-      return this;
-   }
-
-   public Scenes s2()
-   {
-      this.text = "You are in outer space";
-      this.characterImage = null;
-      this.backgroundImage = null;
-      int[] mainPanelCommands = { 2 };
-      // int[] sceneCommands = { 0 };
-      createCommands(mainPanelCommands);
-      return this;
+      this.mainPanelCommandsList = new int[] { 2 };
+      this.sceneCommandsList = new int[] { };
+      createCommands(mainPanelCommandsList);
    }
 }

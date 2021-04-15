@@ -7,27 +7,22 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 // these buttons form the interactive scene commands
-public class MainPanelCommands extends JPanel implements ActionListener
+public class MainPanelCommands extends JPanel
 {
    // I don't know what this does, but it complains without it
    private static final long serialVersionUID = 7810649496279389274L;
 
-   protected JButton button;
-   protected JLabel buttonLabel;
+   protected JButton button = new JButton();;
    private int setSceneID;
    private int commandID;
 
-   public MainPanelCommands(int commandID)
+   public MainPanelCommands(int globalPanelCommandID, int localPanelArrayID)
    {
-      this.commandID = commandID;
+      this.commandID = globalPanelCommandID;
 
-      this.button = new JButton();
-      // turn panel into button?
-      this.button.addActionListener(this);
       // button coordinates and dimensions
       this.button.setBounds(0, 0, 0, 0);
       // removes focus indicator around button text
@@ -40,37 +35,36 @@ public class MainPanelCommands extends JPanel implements ActionListener
       this.button.setEnabled(true);
       // text on button
       this.button.setText("");
-      // button text decoration
+      // button text style
       this.button.setFont(new Font("arial", Font.BOLD, 10));
       // text colour
       this.button.setForeground(Color.BLACK);
-      // add image to button - insert image address inside brackets
+      // add image to button
       this.button.setIcon(null);
-      // places button text relative to button icon
+      // places text relative to icon
       this.button.setHorizontalTextPosition(JButton.CENTER);
       this.button.setVerticalTextPosition(JButton.CENTER);
 
       selectCommand();
 
-      // adds button to game window (change this to overlay later)
-      Globals.window.add(this.button);
-   }
-
-   @Override
-   public void actionPerformed(ActionEvent e)
-   {
-      if (e.getSource() == this.button)
+      this.button.addActionListener(new ActionListener()
       {
-         Globals.content.removeAll();
-         Globals.staticSceneID = this.setSceneID;
-      }
+         public void actionPerformed(ActionEvent event)
+         {
+            Globals.staticSceneID = setSceneID;
+            Globals.update();
+         }
+      });
+      
+      // adds button to scene
+      Globals.mainPanelCommands[localPanelArrayID] = this.button;
    }
 
    private void selectCommand()
    {
       switch (this.commandID)
       {
-         case 0:
+         case 0:            
             p0();
             break;
          case 1:
@@ -84,26 +78,21 @@ public class MainPanelCommands extends JPanel implements ActionListener
 
    public void p0()
    {
-      this.button.setBounds(200, 200, 120, 120);
-      this.button.setText("Climb a mountain");
+      this.button.setBounds(100, Globals.mainPanelHeight / 2 + 16, 120, 50);
+      this.button.setText("Talk to the hobo");
       this.button.setIcon(null);
-      this.setSceneID = 1;
-
    }
 
    public void p1()
    {
-      this.button.setBounds(500, 200, 120, 120);
-      this.button.setText("Jump");
+      this.button.setBounds(300, Globals.mainPanelHeight / 2 + 16, 120, 50);
+      this.button.setText("Rob the hobo");
       this.button.setIcon(null);
-      this.setSceneID = 2;
    }
 
    public void p2()
    {
-      this.button.setBounds(800, 200, 120, 120);
-      this.button.setText("Fall");
-      this.button.setIcon(null);
-      this.setSceneID = 0;
+      this.button.setBounds(500, Globals.mainPanelHeight / 2 + 16, 120, 50);
+      this.button.setIcon(new ImageIcon("Inventory.png"));
    }
 }
