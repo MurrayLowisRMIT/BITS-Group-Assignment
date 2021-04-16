@@ -1,9 +1,12 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -14,6 +17,8 @@ public class SceneCommands extends JPanel
    private static final long serialVersionUID = 7810649496279389274L;
 
    protected JButton button = new JButton();
+   // text on button
+   private String text = "";
    // scene to change to when button is pressed
    private int setSceneID;
    // ID number of the selected button
@@ -29,23 +34,31 @@ public class SceneCommands extends JPanel
       this.button.setFocusable(false);
       // button background colour
       this.button.setBackground(Color.WHITE);
+      // add image to button
+      this.button.setIcon(null);
+      // these overwrite the image when hovered etc. (setIcon() must not be null)
+      this.button.setRolloverEnabled(true);
+      this.button.setRolloverIcon(null);
+      this.button.setPressedIcon(null);
+      // removes background
+      this.button.setContentAreaFilled(false);
       // set button border
       this.button.setBorder(null);
       // set to false to have button greyed out
       this.button.setEnabled(true);
-      // text on button
-      this.button.setText("");
       // button text style
       this.button.setFont(new Font("arial", Font.BOLD, 10));
       // text colour
       this.button.setForeground(Color.BLACK);
-      // add image to button
-      this.button.setIcon(null);
       // places text relative to icon
       this.button.setHorizontalTextPosition(JButton.CENTER);
-      this.button.setVerticalTextPosition(JButton.CENTER);
+      this.button.setVerticalTextPosition(JButton.BOTTOM);
+      // changes cursor when mouse hovers over button
+      this.button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
       selectCommand();
+      // text on button - placing here enables this.text for text wrapping 
+      this.button.setText("<html><p>" + this.text + "</p></html>");
 
       this.button.addActionListener(new ActionListener()
       {
@@ -80,25 +93,24 @@ public class SceneCommands extends JPanel
 
    public void sc0()
    {
-      this.button.setBounds(800, 100, 120, 50);
-      this.button.setText("Climb out the window");
-      this.button.setIcon(null);
+      this.button.setBounds(800, 100, 80, 100);
+      this.text = "This button has an image";
+      this.button.setIcon(new ImageIcon("Arrow.png"));
       this.setSceneID = 1;
    }
 
    public void sc1()
    {
-      this.button.setBounds(570, 100, 120, 50);
-      this.button.setText("Go back inside");
-      this.button.setIcon(null);
+      this.button.setContentAreaFilled(true);
+      this.button.setBounds(570, 100, 180, 50);
+      this.text = "This button has a white background";
       this.setSceneID = 0;
    }
 
    public void sc2()
    {
-      this.button.setBounds(1000, 200, 120, 50);
-      this.button.setText("Venture into the desert");
-      this.button.setIcon(null);
+      this.button.setBounds(1000, 170, 150, 50);
+      this.text = "No background on this button";
       this.setSceneID = 2;
    }
 }

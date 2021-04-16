@@ -64,7 +64,7 @@ public class Scenes
 
    public void s0()
    {
-      this.text = "You are in a dusty room with a sleeping hobo";
+      this.text = "This is the first scene in the game. The buttons below have not yet been programmed to do anything. Click the button near the window.";
       this.characterImage = null;
       this.backgroundImage = new ImageIcon("Dusty room.png");
       this.mainPanelCommandsList = new int[] { 0, 1, 2 };
@@ -74,7 +74,7 @@ public class Scenes
 
    public void s1()
    {
-      this.text = "You go outside. There is a desert";
+      this.text = "There are no actions to be taken here so there are no buttons below.";
       this.characterImage = null;
       this.backgroundImage = new ImageIcon("Desert house.png");
       this.mainPanelCommandsList = new int[] { 2 };
@@ -84,7 +84,7 @@ public class Scenes
 
    public void s2()
    {
-      this.text = "You die in the desert";
+      this.text = "You die in the desert. Congratulations! (the button below does nothing)";
       this.characterImage = null;
       this.backgroundImage = new ImageIcon("Desert skeleton.png");
       this.mainPanelCommandsList = new int[] { 3 };

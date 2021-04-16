@@ -2,7 +2,6 @@ package game;
 
 import java.awt.Color;
 import java.awt.Font;
-
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,8 +18,8 @@ public class Overlay
    {
       // text body inside main panel area
       JLabel textField = new JLabel();
-      // read story text for scene
-      textField.setText(Globals.scenes.text);
+      // read story text for scene - the html adds text wrapping
+      textField.setText("<html><p>" + Globals.scenes.text + "</p></html>");
       textField.setFont(new Font("arial", Font.PLAIN, 20));
       // this is the text colour
       textField.setForeground(Color.RED);
@@ -44,7 +43,7 @@ public class Overlay
       // set up main panel which includes the text area and main commands
       JPanel mainPanel = new JPanel(null);
       // allows manually specifying where panels are placed
-      // perhaps change this to 'flow' later
+      // perhaps change this to 'flow layout' later
       mainPanel.setLayout(null);
       mainPanel.setBackground(Color.BLACK);
       // panel position and dimensions
