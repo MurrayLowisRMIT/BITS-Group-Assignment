@@ -64,7 +64,7 @@ public class SceneCommands extends JPanel
       {
          public void actionPerformed(ActionEvent event)
          {
-            Globals.staticSceneID = setSceneID;
+            Globals.stats.staticSceneID = setSceneID;
             Globals.update();
          }
       });
@@ -93,9 +93,10 @@ public class SceneCommands extends JPanel
 
    public void sc0()
    {
+      this.button.setContentAreaFilled(true);
+      this.button.setIcon(new ImageIcon("Arrow.png"));
       this.button.setBounds(800, 100, 80, 100);
       this.text = "This button has an image";
-      this.button.setIcon(new ImageIcon("Arrow.png"));
       this.setSceneID = 1;
    }
 
@@ -103,14 +104,14 @@ public class SceneCommands extends JPanel
    {
       this.button.setContentAreaFilled(true);
       this.button.setBounds(570, 100, 180, 50);
-      this.text = "This button has a white background";
+      this.text = "No image on this button";
       this.setSceneID = 0;
    }
 
    public void sc2()
    {
       this.button.setBounds(1000, 170, 150, 50);
-      this.text = "No background on this button";
+      this.text = "No background or image on this button";
       this.setSceneID = 2;
    }
 }

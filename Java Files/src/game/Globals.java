@@ -14,8 +14,8 @@ public class Globals
 
    // the full database of all scenes and their content
    public static Scenes scenes = new Scenes();
-   // the ID number of the current scene - starts at 0
-   public static int staticSceneID = 0;
+   // the full list of player stats, inventory, and boolean flags used by the game
+   public static Stats stats = new Stats();
    // the list of buttons in current scene
    public static JButton[] mainPanelCommands;
    public static JButton[] sceneCommands;
