@@ -127,12 +127,10 @@ public class Overlay
       // set up main panel which includes the text area and main commands
       JPanel inventoryOverlay = new JPanel(null);
       // allows manually specifying where panels are placed
-      // perhaps change this to 'flow layout' later
       inventoryOverlay.setLayout(null);
       inventoryOverlay.setBackground(Color.BLACK);
       // panel position and dimensions
-      inventoryOverlay.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2 +
-                                 Globals.mainPanelWidth,
+      inventoryOverlay.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2 + Globals.mainPanelWidth,
                                  0,
                                  (Globals.windowWidth - Globals.mainPanelWidth) / 2,
                                  Globals.windowHeight);

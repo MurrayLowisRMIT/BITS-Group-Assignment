@@ -16,6 +16,7 @@ public class Stats
    protected boolean mainPanelOverlayActive = true;
    protected boolean sceneOverlayActive = true;
    protected boolean inventoryOverlayActive = false;
+   
    protected boolean comicBookAcquired = false;
    protected boolean dogAcquired = false;
 }

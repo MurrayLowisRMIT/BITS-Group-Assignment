@@ -53,7 +53,6 @@ public class ButtonFunctions
    // restart game
    public void a3()
    {
-      Globals.stats.staticSceneID = 0;
-      new Earth2022();
+      Globals.stats = new Stats();
    }
 }

@@ -25,7 +25,7 @@ public class Globals
    public static final int windowHeight = 720;
    // main panel dimensions
    public static final int mainPanelWidth = windowWidth * 2 / 3;
-   public static final int mainPanelHeight = windowHeight * 1 / 3;;
+   public static final int mainPanelHeight = windowHeight * 1 / 3;
 
    public Globals()
    {
