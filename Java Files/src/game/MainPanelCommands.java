@@ -40,8 +40,6 @@ public class MainPanelCommands extends JPanel
       this.button.setRolloverEnabled(true);
       this.button.setRolloverIcon(null);
       this.button.setPressedIcon(null);
-      // set to false to have button greyed out
-      this.button.setEnabled(true);
       // button text style
       this.button.setFont(new Font("arial", Font.BOLD, 10));
       // text colour
@@ -52,14 +50,25 @@ public class MainPanelCommands extends JPanel
       // changes cursor when mouse hovers over button
       this.button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
+      if (Globals.stats.inventoryOverlayActive)
+      {
+         this.button.setEnabled(false);
+      }
+      else
+      {
+         this.button.setEnabled(true);
+      }
+
       selectCommand();
-      // text on button - placing here enables this.text for text wrapping
+
+      // converting to this.text allows for text wrapping
       this.button.setText("<html><p>" + this.text + "</p></html>");
 
       this.button.addActionListener(new ActionListener()
       {
          public void actionPerformed(ActionEvent event)
          {
+            new ButtonFunctions(globalPanelCommandID);
             Globals.update();
          }
       });
@@ -88,31 +97,32 @@ public class MainPanelCommands extends JPanel
    }
 
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
-   
+   // these are the methods called when creating a button (not clicking it)
+
    public void mc0()
    {
-      this.button.setBounds(100, Globals.mainPanelHeight / 2 + 16, 120, 50);
-      this.text = "Program something";
+      this.button.setBounds(100, 0, 120, 50);
+      this.text = "No function";
       this.button.setIcon(null);
    }
 
    public void mc1()
    {
-      this.button.setBounds(300, Globals.mainPanelHeight / 2 + 16, 120, 50);
-      this.text = "Function TBA";
+      this.button.setBounds(300, 0, 120, 50);
+      this.text = "No function";
       this.button.setIcon(null);
    }
 
    public void mc2()
    {
-      this.button.setBounds(500, Globals.mainPanelHeight / 2 + 16, 120, 50);
+      this.button.setEnabled(true);
+      this.button.setBounds(500, 0, 120, 50);
       this.button.setIcon(new ImageIcon("Inventory.png"));
    }
 
    public void mc3()
    {
-      this.button.setBounds(Globals.mainPanelWidth / 2 - 60,
-                            Globals.mainPanelHeight / 2 + 16, 120, 50);
+      this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
       this.button.setIcon(new ImageIcon("Restart.png"));
    }
 }

@@ -16,30 +16,6 @@ public class Scenes
    protected SceneCommands[] sceneCommands;
    protected int[] sceneCommandsList;
 
-   public Scenes()
-   {
-
-   }
-
-   public void updateScene()
-   {
-      // outputs scene contents based on the current sceneID
-      switch (Globals.staticSceneID)
-      {
-         case 0:
-            s0();
-            break;
-         case 1:
-            s1();
-            break;
-         case 2:
-            s2();
-            break;
-      }
-      // create new overlay with scene contents
-      new Overlay();
-   }
-
    private void createCommands(int[] mainPanelCommandsList, int[] sceneCommandsList)
    {
       // update current button list for main panel
@@ -60,11 +36,30 @@ public class Scenes
       }
    }
 
+   public void updateScene()
+   {
+      // outputs scene contents based on the current sceneID
+      switch (Globals.stats.staticSceneID)
+      {
+         case 0:
+            s0();
+            break;
+         case 1:
+            s1();
+            break;
+         case 2:
+            s2();
+            break;
+      }
+      // create new overlay with scene contents
+      new Overlay();
+   }
+
    // SCENE CONTENT BEGINS HERE------------------------------------------------
 
    public void s0()
    {
-      this.text = "This is the first scene in the game. The buttons below have not yet been programmed to do anything. Click the button near the window.";
+      this.text = "This is the first scene in the game. Of the buttons below, only the inventory button below does anything. Click the button near the window.";
       this.characterImage = null;
       this.backgroundImage = new ImageIcon("Dusty room.png");
       this.mainPanelCommandsList = new int[] { 0, 1, 2 };
@@ -84,7 +79,7 @@ public class Scenes
 
    public void s2()
    {
-      this.text = "You die in the desert. Congratulations! (the button below does nothing)";
+      this.text = "You die in the desert. Congratulations! (the button below restarts the 'game')";
       this.characterImage = null;
       this.backgroundImage = new ImageIcon("Desert skeleton.png");
       this.mainPanelCommandsList = new int[] { 3 };

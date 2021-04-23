@@ -8,12 +8,21 @@ import javax.swing.JPanel;
 
 public class Overlay
 {
+   // determine which overlays should be active
    public Overlay()
    {
-      mainPanelOverlay();
-      sceneOverlay();
+      // overlay that needs to be drawn on top listed first
+      if (Globals.stats.inventoryOverlayActive)
+         inventoryOverlay();
+      if (Globals.stats.mainPanelOverlayActive)
+         mainPanelOverlay();
+      if (Globals.stats.sceneOverlayActive)
+         sceneOverlay();
+
+      background();
    }
 
+   // draws main command area at the bottom of the screen
    public void mainPanelOverlay()
    {
       // text body inside main panel area
@@ -40,25 +49,35 @@ public class Overlay
                           Globals.mainPanelWidth - 20,
                           (Globals.mainPanelHeight - 10) / 2);
 
+      JPanel buttonPanel = new JPanel();
+      // allows manually specifying where panels are placed
+      buttonPanel.setLayout(null);
+      buttonPanel.setBackground(Color.DARK_GRAY);
+      // panel position and dimensions
+      buttonPanel.setBounds(10,
+                            (Globals.mainPanelHeight - 10) / 2 + 20,
+                            Globals.mainPanelWidth - 20,
+                            (Globals.mainPanelHeight - 10) / 2);
+
       // set up main panel which includes the text area and main commands
       JPanel mainPanel = new JPanel(null);
       // allows manually specifying where panels are placed
-      // perhaps change this to 'flow layout' later
       mainPanel.setLayout(null);
-      mainPanel.setBackground(Color.BLACK);
+      mainPanel.setBackground(Color.DARK_GRAY);
       // panel position and dimensions
       mainPanel.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2,
                           Globals.windowHeight - Globals.mainPanelHeight,
                           Globals.mainPanelWidth,
                           Globals.mainPanelHeight);
       mainPanel.add(textField);
+      mainPanel.add(buttonPanel);
 
       // add buttons
       for (int i = 0; i < Globals.mainPanelCommands.length; i++)
       {
          if (Globals.mainPanelCommands[i] != null)
          {
-            mainPanel.add(Globals.mainPanelCommands[i]);
+            buttonPanel.add(Globals.mainPanelCommands[i]);
          }
       }
 
@@ -66,7 +85,65 @@ public class Overlay
       Globals.content.add(mainPanel);
    }
 
+   // add buttons to background
    public void sceneOverlay()
+   {
+      // add buttons
+      for (int i = 0; i < Globals.sceneCommands.length; i++)
+      {
+         if (Globals.sceneCommands[i] != null)
+         {
+            Globals.content.add(Globals.sceneCommands[i]);
+         }
+      }
+   }
+
+   // draws inventory screen
+   public void inventoryOverlay()
+   {
+      // placeholder inventory design
+      int inventoryItems = 5;
+      JLabel[] inventory = new JLabel[inventoryItems];
+      for (int i = 0; i < 5; i++)
+      {
+         inventory[i] = new JLabel();
+         inventory[i].setText("item" + (i + 1));
+         inventory[i].setFont(new Font("arial", Font.PLAIN, 20));
+         // this is the text colour
+         inventory[i].setForeground(Color.BLACK);
+         inventory[i].setBackground(Color.RED);
+         inventory[i].setOpaque(true);
+         // define border around the main text area
+         inventory[i].setBorder(BorderFactory.createLineBorder(Color.CYAN, 3));
+         // sets textField location relative to housing panel
+         inventory[i].setVerticalAlignment(JLabel.TOP);
+         inventory[i].setHorizontalAlignment(JLabel.LEFT);
+         inventory[i].setBounds(10,
+                                50 + 80 * i,
+                                175,
+                                50);
+      }
+
+      // set up main panel which includes the text area and main commands
+      JPanel inventoryOverlay = new JPanel(null);
+      // allows manually specifying where panels are placed
+      inventoryOverlay.setLayout(null);
+      inventoryOverlay.setBackground(Color.BLACK);
+      // panel position and dimensions
+      inventoryOverlay.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2 + Globals.mainPanelWidth,
+                                 0,
+                                 (Globals.windowWidth - Globals.mainPanelWidth) / 2,
+                                 Globals.windowHeight);
+      for (int i = 0; i < inventoryItems; i++)
+      {
+         inventoryOverlay.add(inventory[i]);
+      }
+
+      // output overlay
+      Globals.content.add(inventoryOverlay);
+   }
+
+   public void background()
    {
       // add background image
       JLabel background = new JLabel();
@@ -78,15 +155,6 @@ public class Overlay
                            0,
                            Globals.windowWidth,
                            Globals.windowHeight);
-
-      // add buttons
-      for (int i = 0; i < Globals.sceneCommands.length; i++)
-      {
-         if (Globals.sceneCommands[i] != null)
-         {
-            Globals.content.add(Globals.sceneCommands[i]);
-         }
-      }
 
       // output overlay
       Globals.content.add(background);
