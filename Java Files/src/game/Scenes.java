@@ -107,29 +107,29 @@ public class Scenes
          case 0:
             this.text =
                      "You go <Left> following the tattered road and notice the lack of life sounding and as you’ve trans-versed further you stumble upon a torn comic that draws your attention, reminds you of a home where you read similar stories as a child.";
-            this.mainPanelCommandsList = new int[] { 0, 2, 3, 4  };
-            this.sceneCommandsList = new int[] { 4 };
+            this.mainPanelCommandsList = new int[] { 0, 2, 3, 4 };
+            this.sceneCommandsList = new int[] { 5 };
+            break;
+
+         case 1:
+            this.text =
+                     "as you flip through the pages you're reminded and feel for a more simplistic time once when you were a child once when you didn’t fear waking up.";
+            this.mainPanelCommandsList = new int[] { 0, 5 };
+            this.sceneCommandsList = new int[] {  };
             break;
 
          case 2:
             this.text =
-                     "You go <Left> following the tattered road and notice the lack of life sounding and as you’ve trans-versed further you stumble upon a torn comic that draws your attention, reminds you of a home where you read similar stories as a child.";
-            this.mainPanelCommandsList = new int[] { 0 };
-            this.sceneCommandsList = new int[] { 4 };
+                     "taking apart what once was sought after brings you a sense of catharsis only to be followed by the emptiness of taking emotion out on a book, stand to keep walking.";
+            this.mainPanelCommandsList = new int[] { 0, 5 };
+            this.sceneCommandsList = new int[] {  6 };
             break;
 
          case 3:
             this.text =
-                     "taking apart what once was sought after brings you a sense of catharsis only to be followed by the emptiness of taking emotion out on a book, stand to keep walking.";
-            this.mainPanelCommandsList = new int[] { 0 };
-            this.sceneCommandsList = new int[] { 4 };
-            break;
-
-         case 4:
-            this.text =
-                     "You go <Left> following the tattered road and notice the lack of life sounding and as you’ve trans-versed further you stumble upon a torn comic that draws your attention, reminds you of a home where you read similar stories as a child.";
-            this.mainPanelCommandsList = new int[] { 0 };
-            this.sceneCommandsList = new int[] { 4 };
+                     "flicker of resemblance to a childhood story is taken but little more than a second is wasted as you walk onward. ";
+            this.mainPanelCommandsList = new int[] { 0, 5 };
+            this.sceneCommandsList = new int[] {  };
             break;
       }
       this.backgroundImage = new ImageIcon("../Art/Backgrounds/Straight road.png");
@@ -137,7 +137,37 @@ public class Scenes
 
    public void s3()
    {
-      
+      switch (Globals.stats.dogDecision)
+      {
+         case 0:
+            this.text =
+                     "You go <Right> you follow the road until you come across a dog walking aimlessly around the street looking for food, the dog comes up to you and sits on the road in front of you.";
+            this.mainPanelCommandsList = new int[] { 0, 6, 7, 8 };
+            this.sceneCommandsList = new int[] { 4 };
+            break;
+
+         case 1:
+            this.text =
+                     "You put your hand out to pay the dog, the dog pulls back from you sniffing your hand.";
+            this.mainPanelCommandsList = new int[] { 0, 5 };
+            this.sceneCommandsList = new int[] { 3, 4 };
+            break;
+
+         case 2:
+            this.text = "Sir Dogmund of Wickersham:<br>\"Good sir! How dare thee!\"";
+            this.characterImage = new ImageIcon("../Art/Characters/Angry dog.png");
+            this.mainPanelCommandsList = new int[] { 0, 5 };
+            this.sceneCommandsList = new int[] { 4 };
+            break;
+
+         case 3:
+            this.text =
+                     "you choose to ignore the dog and continue to travel down the road, the dog has started to follow you.";
+            this.mainPanelCommandsList = new int[] { 0, 5 };
+            this.sceneCommandsList = new int[] {  };
+            break;
+      }
+      this.backgroundImage = new ImageIcon("../Art/Backgrounds/Straight road.png");
    }
 
    public void s4()

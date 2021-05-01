@@ -1,7 +1,5 @@
 package game;
 
-import java.awt.Color;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
@@ -21,7 +19,6 @@ public class SceneCommands extends Commands
    protected void newButton()
    {
       // unique placeholder features of scene buttons
-      this.button.setContentAreaFilled(false);
       this.button.setBorder(null);
       this.button.setVerticalTextPosition(JButton.TOP);
 
@@ -78,10 +75,9 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-         this.button.setContentAreaFilled(true);
-         this.button.setBackground(Color.RED);
-         this.button.setIcon(new ImageIcon("../Art/Overlaid items/CB Radio.png"));
-         this.button.setBounds(800, 50, 174, 382);
+         this.button.setContentAreaFilled(false);
+         this.button.setIcon(new ImageIcon("../Art/Overlay/CB Radio.png"));
+         this.button.setBounds(800, 50, 49, 140);
          this.text = "Go after the signal";
       }
       else
@@ -96,8 +92,9 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
+         this.button.setContentAreaFilled(false);
          this.button.setIcon(new ImageIcon("../Art/Icons/Arrow Left.png"));
-         this.button.setBounds(400, 200, 60, 60);
+         this.button.setBounds(400, 200, 60, 80);
          this.text = "Go left";
       }
       else
@@ -112,8 +109,9 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
+         this.button.setContentAreaFilled(false);
          this.button.setIcon(new ImageIcon("../Art/Icons/Arrow Right.png"));
-         this.button.setBounds(800, 200, 60, 60);
+         this.button.setBounds(800, 200, 60, 80);
          this.text = "Go right";
       }
       else
@@ -128,12 +126,18 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-
+         this.button.setContentAreaFilled(false);
+         this.button.setIcon(new ImageIcon("../Art/Overlay/Hand to Dog.png"));
+         this.button.setBounds(100, 250, 482, 354);
+         // these make it behave like part of the image and not a button
+         this.button.setCursor(null);
+         this.button.setEnabled(true);
+         
       }
       else
       // action --------------------------------------
       {
-
+         
       }
    }
 
@@ -142,7 +146,12 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-
+         this.button.setContentAreaFilled(false);
+         this.button.setIcon(new ImageIcon("../Art/Overlay/Dog Front.png"));
+         this.button.setBounds(400, 100, 370, 523);
+         // these make it behave like part of the image and not a button
+         this.button.setCursor(null);
+         this.button.setEnabled(true);
       }
       else
       // action --------------------------------------
@@ -156,6 +165,12 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
+         this.button.setContentAreaFilled(false);
+         this.button.setIcon(new ImageIcon("../Art/Overlay/Comic.png"));
+         this.button.setBounds(400, 100, 370, 523);
+         // these make it behave like part of the image and not a button
+         this.button.setCursor(null);
+         this.button.setEnabled(true);
 
       }
       else
@@ -170,6 +185,12 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
+         this.button.setContentAreaFilled(false);
+         this.button.setIcon(new ImageIcon("../Art/Overlay/Broken Comic.png"));
+         this.button.setBounds(100, 100, 1117, 728);
+         // these make it behave like part of the image and not a button
+         this.button.setCursor(null);
+         this.button.setEnabled(true);
 
       }
       else

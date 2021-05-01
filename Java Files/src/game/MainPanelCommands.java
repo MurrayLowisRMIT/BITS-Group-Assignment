@@ -117,15 +117,14 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-         this.text = "Destroy the comic";
+         this.text = "Open the comic and take it";
          this.button.setBounds(100, 0, 120, 50);
-         Globals.stats.comicBookDecision = 1;
-         Globals.stats.comicBook = 1;
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.comicBookDecision = 1;
+         Globals.stats.comicBook = 1;
       }
    }
 
@@ -134,14 +133,13 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-         this.text = "Open the comic and take it";
+         this.text = "Destroy the comic";
          this.button.setBounds(250, 0, 120, 50);
-         Globals.stats.comicBookDecision = 2;
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.comicBookDecision = 2;
       }
    }
 
@@ -152,12 +150,11 @@ public class MainPanelCommands extends Commands
       {
          this.text = "Ignore the comic and keep walking";
          this.button.setBounds(400, 0, 120, 50);
-         Globals.stats.comicBookDecision = 3;
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.comicBookDecision = 3;
       }
    }
 
@@ -166,12 +163,13 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-
+         this.text = "Continue";
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.staticSceneID = 4;
       }
    }
 
@@ -180,12 +178,13 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-
+         this.text = "Pat the dog";
+         this.button.setBounds(100, 0, 120, 50);
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.dogDecision = 1;
       }
    }
 
@@ -195,11 +194,13 @@ public class MainPanelCommands extends Commands
       // draw ----------------------------------------
       {
 
+         this.text = "Feed the dog";
+         this.button.setBounds(250, 0, 120, 50);
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.dogDecision = 2;
       }
    }
 
@@ -209,11 +210,13 @@ public class MainPanelCommands extends Commands
       // draw ----------------------------------------
       {
 
+         this.text = "Ignore the dog";
+         this.button.setBounds(400, 0, 120, 50);
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.dogDecision = 3;
       }
    }
 
