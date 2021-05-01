@@ -1,81 +1,38 @@
 package game;
 
 import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JPanel;
 
 // these buttons form the interactive scene commands
-public class SceneCommands extends JPanel
+public class SceneCommands extends Commands
 {
    // I don't know what this does, but it complains without it
    private static final long serialVersionUID = 7810649496279389274L;
 
-   protected JButton button = new JButton();
-   // text on button
-   private String text = "";
-   // scene to change to when button is pressed
-   private int setSceneID;
-   // ID number of the selected button
-   private int commandID;
-
-   public SceneCommands(int globalSceneCommandID, int localSceneArrayID)
+   public SceneCommands(int globalID, int localID)
    {
-      this.commandID = globalSceneCommandID;
-
-      // button coordinates and dimensions
-      this.button.setBounds(0, 0, 0, 0);
-      // removes focus indicator around button text
-      this.button.setFocusable(false);
-      // button background colour
-      this.button.setBackground(Color.WHITE);
-      // add image to button
-      this.button.setIcon(null);
-      // these overwrite the image when hovered etc. (setIcon() must not be null)
-      this.button.setRolloverEnabled(true);
-      this.button.setRolloverIcon(null);
-      this.button.setPressedIcon(null);
-      // removes background
-      this.button.setContentAreaFilled(false);
-      // set button border
-      this.button.setBorder(null);
-      // set to false to have button greyed out
-      this.button.setEnabled(true);
-      // button text style
-      this.button.setFont(new Font("arial", Font.BOLD, 10));
-      // text colour
-      this.button.setForeground(Color.BLACK);
-      // places text relative to icon
-      this.button.setHorizontalTextPosition(JButton.CENTER);
-      this.button.setVerticalTextPosition(JButton.BOTTOM);
-      // changes cursor when mouse hovers over button
-      this.button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-
-      selectCommand();
-      // text on button - placing here enables this.text for text wrapping 
-      this.button.setText("<html><p>" + this.text + "</p></html>");
-
-      this.button.addActionListener(new ActionListener()
-      {
-         public void actionPerformed(ActionEvent event)
-         {
-            Globals.stats.staticSceneID = setSceneID;
-            Globals.update();
-         }
-      });
-
-      // adds button to scene
-      Globals.sceneCommands[localSceneArrayID] = this.button;
+      super(globalID, localID);
+      super.buttonTemplate();
+      newButton();
    }
 
-   private void selectCommand()
+   protected void newButton()
    {
-      switch (this.commandID)
+      // unique placeholder features of scene buttons
+      this.button.setContentAreaFilled(false);
+      this.button.setBorder(null);
+      this.button.setVerticalTextPosition(JButton.TOP);
+
+      super.buttonAction();
+      // adds button to scene
+      Globals.sceneCommands[this.localID] = this.button;
+   }
+
+   protected void selectCommand()
+   {
+      switch (this.globalID)
       {
          case 0:
             sc0();
@@ -86,32 +43,195 @@ public class SceneCommands extends JPanel
          case 2:
             sc2();
             break;
+         case 3:
+            sc3();
+            break;
+         case 4:
+            sc4();
+            break;
+         case 5:
+            sc5();
+            break;
+         case 6:
+            sc6();
+            break;
+         case 7:
+            sc7();
+            break;
+         case 8:
+            sc8();
+            break;
+         case 9:
+            sc9();
+            break;
+         case 10:
+            sc10();
+            break;
       }
    }
 
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
+   // -------------------------------------------------------------------------
 
    public void sc0()
    {
-      this.button.setContentAreaFilled(true);
-      this.button.setIcon(new ImageIcon("Arrow.png"));
-      this.button.setBounds(800, 100, 80, 100);
-      this.text = "This button has an image";
-      this.setSceneID = 1;
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setContentAreaFilled(true);
+         this.button.setBackground(Color.RED);
+         this.button.setIcon(new ImageIcon("../Art/Overlaid items/CB Radio.png"));
+         this.button.setBounds(800, 50, 174, 382);
+         this.text = "Go after the signal";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 1;
+      }
    }
 
    public void sc1()
    {
-      this.button.setContentAreaFilled(true);
-      this.button.setBounds(570, 100, 180, 50);
-      this.text = "No image on this button";
-      this.setSceneID = 0;
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setIcon(new ImageIcon("../Art/Icons/Arrow Left.png"));
+         this.button.setBounds(400, 200, 60, 60);
+         this.text = "Go left";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 2;
+      }
    }
 
    public void sc2()
    {
-      this.button.setBounds(1000, 170, 150, 50);
-      this.text = "No background or image on this button";
-      this.setSceneID = 2;
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setIcon(new ImageIcon("../Art/Icons/Arrow Right.png"));
+         this.button.setBounds(800, 200, 60, 60);
+         this.text = "Go right";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 3;
+      }
+   }
+
+   public void sc3()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void sc4()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void sc5()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void sc6()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void sc7()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void sc8()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void sc9()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void sc10()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
    }
 }
