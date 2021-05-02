@@ -11,7 +11,7 @@ public class Overlay
    // determine which overlays should be active
    public Overlay()
    {
-      // overlay that needs to be drawn on top listed first
+      // the overlay that needs to be drawn on top is to be listed first
       if (Globals.stats.inventoryOverlayActive)
          inventoryOverlay();
       if (Globals.stats.mainPanelOverlayActive)
@@ -29,7 +29,7 @@ public class Overlay
       JLabel textField = new JLabel();
       // read story text for scene - the html adds text wrapping
       textField.setText("<html><p>" + Globals.scenes.text + "</p></html>");
-      textField.setFont(new Font("arial", Font.PLAIN, 20));
+      textField.setFont(new Font("arial", Font.PLAIN, 15));
       // this is the text colour
       textField.setForeground(Color.RED);
       textField.setBackground(Color.BLACK);
