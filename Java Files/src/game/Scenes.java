@@ -122,7 +122,7 @@ public class Scenes
             this.text =
                      "taking apart what once was sought after brings you a sense of catharsis only to be followed by the emptiness of taking emotion out on a book, stand to keep walking.";
             this.mainPanelCommandsList = new int[] { 0, 5 };
-            this.sceneCommandsList = new int[] {  6 };
+            this.sceneCommandsList = new int[] { 6 };
             break;
 
          case 3:
