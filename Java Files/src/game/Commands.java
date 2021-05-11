@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -63,10 +64,12 @@ public abstract class Commands extends JPanel
       // disables certain buttons when inventory overlay is active
       if (Globals.stats.inventoryOverlayActive)
       {
+         // button is greyed out
          this.button.setEnabled(false);
       }
       else
       {
+         // button is active
          this.button.setEnabled(true);
       }
 
@@ -79,6 +82,7 @@ public abstract class Commands extends JPanel
 
    protected abstract void selectCommand();
 
+   // method called when button is clicked
    protected void buttonAction()
    {
       this.button.addActionListener(new ActionListener()
@@ -93,5 +97,32 @@ public abstract class Commands extends JPanel
             Globals.update();
          }
       });
+   }
+
+   // method to select image to use as button icon
+   protected void icon(String image)
+   {
+      if (Globals.stats.artPack == 1)
+      {
+         this.button.setIcon(new ImageIcon("../Art/Final Art/Icon/" + image));
+      }
+      else
+      {
+         this.button.setIcon(new ImageIcon("../Art/Placeholder Art/Icon/" + image));
+      }
+   }
+
+   // method to select image for overlaid buttons/images etc.
+   public void overlayImage(String image)
+   {
+      if (Globals.stats.artPack == 1)
+      {
+         this.button.setIcon(new ImageIcon("../Art/Final Art/Overlay/" + image));
+      }
+      else
+      {
+         this.button
+                  .setIcon(new ImageIcon("../Art/Placeholder Art/Overlay/" + image));
+      }
    }
 }

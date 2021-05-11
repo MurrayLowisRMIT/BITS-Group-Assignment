@@ -98,31 +98,29 @@ public class Overlay
       }
    }
 
-   // draws inventory screen
+   // draws inventory layer
    public void inventoryOverlay()
    {
-      // placeholder inventory design
-      int inventoryItems = 5;
-      JLabel[] inventory = new JLabel[inventoryItems];
-      for (int i = 0; i < 5; i++)
-      {
-         inventory[i] = new JLabel();
-         inventory[i].setText("item" + (i + 1));
-         inventory[i].setFont(new Font("arial", Font.PLAIN, 20));
-         // this is the text colour
-         inventory[i].setForeground(Color.BLACK);
-         inventory[i].setBackground(Color.RED);
-         inventory[i].setOpaque(true);
-         // define border around the main text area
-         inventory[i].setBorder(BorderFactory.createLineBorder(Color.CYAN, 3));
-         // sets textField location relative to housing panel
-         inventory[i].setVerticalAlignment(JLabel.TOP);
-         inventory[i].setHorizontalAlignment(JLabel.LEFT);
-         inventory[i].setBounds(10,
-                                50 + 80 * i,
-                                175,
-                                50);
-      }
+      // JLabel[] inventory = new JLabel[Globals.inventoryActive.length];
+      // for (int i = 0; i < Globals.inventoryActive.length; i++)
+      // {
+      // inventory[i] = new JLabel();
+      // inventory[i].setText("item" + (i + 1));
+      // inventory[i].setFont(new Font("arial", Font.PLAIN, 20));
+      // // this is the text colour
+      // inventory[i].setForeground(Color.BLACK);
+      // inventory[i].setBackground(Color.RED);
+      // inventory[i].setOpaque(true);
+      // // define border around the main text area
+      // inventory[i].setBorder(BorderFactory.createLineBorder(Color.CYAN, 3));
+      // // sets textField location relative to housing panel
+      // inventory[i].setVerticalAlignment(JLabel.TOP);
+      // inventory[i].setHorizontalAlignment(JLabel.LEFT);
+      // inventory[i].setBounds(10,
+      // 50 + 80 * i,
+      // 175,
+      // 50);
+      // }
 
       // set up main panel which includes the text area and main commands
       JPanel inventoryOverlay = new JPanel(null);
@@ -130,13 +128,16 @@ public class Overlay
       inventoryOverlay.setLayout(null);
       inventoryOverlay.setBackground(Color.BLACK);
       // panel position and dimensions
-      inventoryOverlay.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2 + Globals.mainPanelWidth,
+      inventoryOverlay.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2 +
+                                 Globals.mainPanelWidth,
                                  0,
                                  (Globals.windowWidth - Globals.mainPanelWidth) / 2,
                                  Globals.windowHeight);
-      for (int i = 0; i < inventoryItems; i++)
+
+      // add buttons
+      for (int i = 0; i < Globals.stats.inventory.length; i++)
       {
-         inventoryOverlay.add(inventory[i]);
+         inventoryOverlay.add(Globals.inventory[i]);
       }
 
       // output overlay

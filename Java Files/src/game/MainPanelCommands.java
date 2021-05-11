@@ -1,10 +1,8 @@
 package game;
 
 import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 
-// these buttons form the interactive scene commands
+// these buttons form the commands in the main panel
 public class MainPanelCommands extends Commands
 {
    // I don't know what this does, but it complains without it
@@ -20,9 +18,8 @@ public class MainPanelCommands extends Commands
    protected void newButton()
    {
       // features common to all main panel buttons
-      // this overwrites changes made to individual buttons below 
+      // this overwrites changes made to individual buttons below
       this.button.setBorder(BorderFactory.createEtchedBorder());
-      this.button.setVerticalTextPosition(JButton.CENTER);
 
       super.buttonAction();
       // adds button to scene
@@ -66,27 +63,51 @@ public class MainPanelCommands extends Commands
          case 10:
             mc10();
             break;
+         case 11:
+            mc11();
+            break;
+         case 12:
+            mc12();
+            break;
+         case 13:
+            mc13();
+            break;
+         case 14:
+            mc14();
+            break;
+         case 15:
+            mc15();
+            break;
+         case 16:
+            mc16();
+            break;
+         case 17:
+            mc17();
+            break;
+         case 18:
+            mc18();
+            break;
+         case 19:
+            mc19();
+            break;
+         case 20:
+            mc20();
+            break;
       }
    }
 
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
    // -------------------------------------------------------------------------
 
-   
-   public void icon(String image)
-   {
-      
-   }
    // open/close inventory
    public void mc0()
    {
       if (this.action == false)
       // draw ----------------------------------------
       {
-         this.button.setBounds(Globals.mainPanelWidth - 150, 0, 120, 50);
          icon("Inventory.png");
-         this.button.setIcon(new ImageIcon("Inventory.png"));
-         // this line is exclusive to the inventory button
+         this.button.setBounds(Globals.mainPanelWidth - 150, 0, 120, 50);
+         // stops button being disabled by the inventory overlay
          this.button.setEnabled(true);
       }
       else
@@ -103,45 +124,110 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   // restart game
+   // go to scene 1
    public void mc1()
    {
       if (action == false)
       // draw ----------------------------------------
       {
          this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-         this.button.setIcon(new ImageIcon("Restart.png"));
+         this.text = "Continue";
       }
       else
       // action --------------------------------------
       {
-         Globals.stats = new Stats();
+         Globals.stats.staticSceneID = 1;
       }
    }
 
+   // turn on radio
    public void mc2()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.text = "Open the comic and take it";
-         this.button.setBounds(100, 0, 120, 50);
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Turn on radio";
       }
       else
       // action --------------------------------------
       {
-         Globals.stats.comicBookDecision = 1;
-         Globals.stats.comicBook = 1;
+         Globals.stats.radio = 1;
       }
    }
 
+   // "OK" button
    public void mc3()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.text = "Destroy the comic";
-         this.button.setBounds(250, 0, 120, 50);
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "OK";
+      }
+      else
+      // action --------------------------------------
+      {
+         // function determined by scene class statements
+      }
+   }
+
+   // go to scene 2
+   public void mc4()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Follow the signal";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 2;
+      }
+   }
+
+   // go to scene 3
+   public void mc5()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Continue";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 3;
+      }
+   }
+
+   // scene 4 take comic
+   public void mc6()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(80, 0, 120, 50);
+         this.text = "Take the comic";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.comicBookDecision = 1;
+      }
+   }
+
+   // scene 4 ignore comic
+   public void mc7()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(220, 0, 120, 50);
+         this.text = "Ignore the comic";
       }
       else
       // action --------------------------------------
@@ -150,43 +236,47 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   public void mc4()
+   // scene 4 destroy comic
+   public void mc8()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.text = "Ignore the comic and keep walking";
-         this.button.setBounds(400, 0, 120, 50);
+         this.button.setBounds(360, 0, 120, 50);
+         this.text = "Destroy the comic";
       }
       else
       // action --------------------------------------
       {
          Globals.stats.comicBookDecision = 3;
+
       }
    }
 
-   public void mc5()
+   // go to scene 6
+   public void mc9()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.text = "Continue";
          this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Continue";
       }
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = 4;
+         Globals.stats.staticSceneID = 6;
       }
    }
 
-   public void mc6()
+   // scene 5 pat dog
+   public void mc10()
    {
       if (action == false)
       // draw ----------------------------------------
       {
+         this.button.setBounds(80, 0, 120, 50);
          this.text = "Pat the dog";
-         this.button.setBounds(100, 0, 120, 50);
       }
       else
       // action --------------------------------------
@@ -195,14 +285,14 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   public void mc7()
+   // scene 5 feed dog
+   public void mc11()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-
+         this.button.setBounds(220, 0, 120, 50);
          this.text = "Feed the dog";
-         this.button.setBounds(250, 0, 120, 50);
       }
       else
       // action --------------------------------------
@@ -211,23 +301,24 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   public void mc8()
+   // scene 5 ignore dog
+   public void mc12()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-
+         this.button.setBounds(360, 0, 120, 50);
          this.text = "Ignore the dog";
-         this.button.setBounds(400, 0, 120, 50);
       }
       else
       // action --------------------------------------
       {
          Globals.stats.dogDecision = 3;
+
       }
    }
 
-   public void mc9()
+   public void mc13()
    {
       if (action == false)
       // draw ----------------------------------------
@@ -241,7 +332,91 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   public void mc10()
+   public void mc14()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void mc15()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void mc16()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void mc17()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void mc18()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void mc19()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   public void mc20()
    {
       if (action == false)
       // draw ----------------------------------------

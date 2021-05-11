@@ -1,6 +1,5 @@
 package game;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 // these buttons form the interactive scene commands
@@ -22,6 +21,7 @@ public class SceneCommands extends Commands
       // this overwrites changes made to individual buttons below
       this.button.setBorder(null);
       this.button.setVerticalTextPosition(JButton.TOP);
+      this.button.setContentAreaFilled(false);
 
       super.buttonAction();
       // adds button to scene
@@ -65,202 +65,241 @@ public class SceneCommands extends Commands
          case 10:
             sc10();
             break;
+         case 11:
+            sc11();
+            break;
+         case 12:
+            sc12();
+            break;
+         case 13:
+            sc13();
+            break;
+         case 14:
+            sc14();
+            break;
+         case 15:
+            sc15();
+            break;
+         case 16:
+            sc16();
+            break;
+         case 17:
+            sc17();
+            break;
+         case 18:
+            sc18();
+            break;
+         case 19:
+            sc19();
+            break;
+         case 20:
+            sc20();
+            break;
       }
    }
 
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
    // -------------------------------------------------------------------------
 
-   public void sceneImage(String image)
-   {
-      String packType;
-      
-   }
-   
+   // pick up radio
    public void sc0()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.button.setContentAreaFilled(false);
-         this.button.setIcon(new ImageIcon("../Art/Overlay/CB Radio.png"));
-         this.button.setBounds(800, 50, 49, 140);
-         this.text = "Go after the signal";
+         overlayImage("radio on table.png");
+         this.button.setBounds(100, 300, 49, 140);
+         this.text = "Pick up radio";
       }
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = 1;
+         Globals.stats.radio++;
       }
    }
 
+   // pick up bandages
    public void sc1()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.button.setContentAreaFilled(false);
-         this.button.setIcon(new ImageIcon("../Art/Icons/Arrow Left.png"));
-         this.button.setBounds(400, 200, 60, 80);
-         this.text = "Go left";
+         overlayImage("Bandage.png");
+         this.button.setBounds(Globals.windowWidth - 300, 300, 49, 140);
+         this.text = "Pick up bandages";
       }
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = 2;
+         Globals.stats.bandages++;
+         Globals.stats.check = true;
       }
    }
 
+   // scene 3 shadowy figure
    public void sc2()
    {
-      if (action == false)
-      // draw ----------------------------------------
-      {
-         this.button.setContentAreaFilled(false);
-         sceneImage("Arrow Right.png");
-         this.button.setIcon(new ImageIcon("../Art/Icons/Arrow Right.png"));
-         this.button.setBounds(800, 200, 60, 80);
-         this.text = "Go right";
-      }
-      else
-      // action --------------------------------------
-      {
-         Globals.stats.staticSceneID = 3;
-      }
+      overlayImage("Shadowman.png");
+      // needs updating!!!
+      this.button.setBounds((Globals.windowWidth - 425) / 2,
+                            Globals.windowHeight - 600,
+                            425,
+                            542);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
    }
 
+   // scene 3 go left
    public void sc3()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.button.setContentAreaFilled(false);
-         this.button.setIcon(new ImageIcon("../Art/Overlay/Hand to Dog.png"));
-         this.button.setBounds(100, 250, 482, 354);
-         // these make it behave like part of the image and not a button
-         this.button.setCursor(null);
-         this.button.setEnabled(true);
-         
+         overlayImage("Arrow Left.png");
+         this.button.setBounds(100, 200, 60, 80);
+         this.text = "Go left";
       }
       else
       // action --------------------------------------
       {
-         
+         Globals.stats.staticSceneID = 4;
       }
    }
 
+   // scene 3 go right
    public void sc4()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.button.setContentAreaFilled(false);
-         this.button.setIcon(new ImageIcon("../Art/Overlay/Dog Front.png"));
-         this.button.setBounds(400, 100, 370, 523);
-         // these make it behave like part of the image and not a button
-         this.button.setCursor(null);
-         this.button.setEnabled(true);
+         overlayImage("Arrow Right.png");
+         this.button.setBounds(Globals.windowWidth - 160, 200, 60, 80);
+         this.text = "Go right";
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.staticSceneID = 5;
       }
    }
 
+   // scene 3 sign
    public void sc5()
    {
-      if (action == false)
-      // draw ----------------------------------------
-      {
-         this.button.setContentAreaFilled(false);
-         this.button.setIcon(new ImageIcon("../Art/Overlay/Comic.png"));
-         this.button.setBounds(400, 100, 370, 523);
-         // these make it behave like part of the image and not a button
-         this.button.setCursor(null);
-         this.button.setEnabled(true);
-
-      }
-      else
-      // action --------------------------------------
-      {
-
-      }
+      overlayImage("intersection sign.png");
+      this.button.setBounds(Globals.windowWidth / 2, 50, 0, 0); // need image!!!
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
    }
 
+   // scene 4 comic
    public void sc6()
    {
-      if (action == false)
-      // draw ----------------------------------------
-      {
-         this.button.setContentAreaFilled(false);
-         this.button.setIcon(new ImageIcon("../Art/Overlay/Broken Comic.png"));
-         this.button.setBounds(100, 100, 1117, 728);
-         // these make it behave like part of the image and not a button
-         this.button.setCursor(null);
-         this.button.setEnabled(true);
-
-      }
-      else
-      // action --------------------------------------
-      {
-
-      }
+      overlayImage("Comic.png");
+      this.button.setBounds(Globals.windowWidth / 2, 100, 129, 156);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
    }
 
+   // scene 4 reading comic
    public void sc7()
    {
-      if (action == false)
-      // draw ----------------------------------------
-      {
-
-      }
-      else
-      // action --------------------------------------
-      {
-
-      }
+      overlayImage("Reading comic.png"); // need image!!!
+      this.button.setBounds(Globals.windowWidth / 2, 100, 129, 156);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
    }
 
+   // scene 4 broken comic
    public void sc8()
    {
-      if (action == false)
-      // draw ----------------------------------------
-      {
-
-      }
-      else
-      // action --------------------------------------
-      {
-
-      }
+      overlayImage("Broken Comic.png");
+      this.button.setBounds(50, 0, 1117, 728);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
    }
 
+   // scene 5 dog first appearance
    public void sc9()
    {
-      if (action == false)
-      // draw ----------------------------------------
-      {
-
-      }
-      else
-      // action --------------------------------------
-      {
-
-      }
+      overlayImage("dog standing.png"); // need image!!!
+      this.button.setBounds(0, 0, 0, 0);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
    }
 
+   // scene 5 dog being patted
    public void sc10()
    {
-      if (action == false)
-      // draw ----------------------------------------
-      {
+      overlayImage("dog standing.png"); // need image!!!
+      this.button.setBounds(0, 0, 0, 0);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
+   }
 
-      }
-      else
-      // action --------------------------------------
-      {
+   // scene 5 dog being fed
+   public void sc11()
+   {
+      overlayImage("Dog front.png");
+      this.button.setBounds(Globals.mainPanelWidth / 2 + 100, 100, 370, 523);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
+   }
 
-      }
+   // scene 5 dog being ignored
+   public void sc12()
+   {
+      overlayImage("Dog front.png");
+      this.button.setBounds(Globals.mainPanelWidth / 2 + 400, 300, 370, 523);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
+   }
+
+   // scene 5 hand patting dog
+   public void sc13()
+   {
+      overlayImage("Hand to Dog.png");
+      this.button.setBounds(Globals.mainPanelWidth / 2 + 100 - 370, 200, 482, 354);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
+   }
+
+   // scene 5 dog eating
+   public void sc14()
+   {
+      overlayImage("dog eat bread.png");
+      this.button.setBounds(0, 0, 0, 0); // need image!!!
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
+   }
+
+   public void sc15()
+   {
+
+   }
+
+   public void sc16()
+   {
+
+   }
+
+   public void sc17()
+   {
+
+   }
+
+   public void sc18()
+   {
+
+   }
+
+   public void sc19()
+   {
+
+   }
+
+   public void sc20()
+   {
+
    }
 }

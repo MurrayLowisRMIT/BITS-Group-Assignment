@@ -12,10 +12,12 @@ public class Globals
    public static JFrame window = new JFrame("Earth2022");
    public static Container content = window.getContentPane();
 
+   // the full database of player stats, inventory, and boolean flags in the game
+   public static Stats stats = new Stats();
    // the full database of all scenes and their content
    public static Scenes scenes = new Scenes();
-   // the full list of player stats, inventory, and boolean flags used by the game
-   public static Stats stats = new Stats();
+   // the list of all inventory element buttons
+   public static JButton[] inventory;
    // the list of buttons in current scene
    public static JButton[] mainPanelCommands;
    public static JButton[] sceneCommands;
@@ -45,7 +47,7 @@ public class Globals
       update();
    }
 
-   // method to run with every player action to refresh screen
+   // method to refresh the screen with every player action
    public static void update()
    {
       // clears current screen contents
