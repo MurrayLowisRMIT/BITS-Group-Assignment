@@ -23,7 +23,7 @@ public abstract class Commands extends JPanel
    protected int globalID;
    // local ID number of the selected button
    protected int localID;
-   // runs either the 'draw button method' or 'button clicked method'
+   // decides whether to run the 'draw button function' or 'button clicked function'
    protected boolean action = false;
 
    public Commands(int globalID, int localID)
@@ -39,6 +39,8 @@ public abstract class Commands extends JPanel
       this.button.setBounds(0, 0, 0, 0);
       // removes focus indicator around button text
       this.button.setFocusable(false);
+      // set whether to make background opaque (true) or transparent (false)
+      this.button.setContentAreaFilled(true);
       // button background colour
       this.button.setBackground(Color.WHITE);
       // set button borders
@@ -58,6 +60,7 @@ public abstract class Commands extends JPanel
       // changes cursor when mouse hovers over button
       this.button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
+      // disables certain buttons when inventory overlay is active
       if (Globals.stats.inventoryOverlayActive)
       {
          this.button.setEnabled(false);
@@ -69,7 +72,8 @@ public abstract class Commands extends JPanel
 
       selectCommand();
 
-      // converting to this.text allows for text wrapping
+      // converting to this.text and using html allows for text wrapping
+      // keep this after 'selectCommand()' method
       this.button.setText("<html><p><center>" + this.text + "</center></p></html>");
    }
 
@@ -81,10 +85,10 @@ public abstract class Commands extends JPanel
       {
          public void actionPerformed(ActionEvent event)
          {
-            // method now runs button clicked function
+            // method will run 'button clicked' function when called
             action = true;
             selectCommand();
-            // method now runs draw button function again
+            // method will run 'draw button' function when called
             action = false;
             Globals.update();
          }

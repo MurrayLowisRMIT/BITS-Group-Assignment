@@ -9,7 +9,7 @@ public class Earth2022
 
 //   public void run()
 //   {
-//      // record current time in nanoseconds
+//      // record the current time to the nearest nanosecond
 //      long previous = System.nanoTime();
 //      int framerate = 5;
 //      double frameDuration = 1000000000 / framerate;

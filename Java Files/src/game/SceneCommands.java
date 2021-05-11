@@ -18,7 +18,8 @@ public class SceneCommands extends Commands
 
    protected void newButton()
    {
-      // unique placeholder features of scene buttons
+      // features common to all scene buttons
+      // this overwrites changes made to individual buttons below
       this.button.setBorder(null);
       this.button.setVerticalTextPosition(JButton.TOP);
 
@@ -70,6 +71,11 @@ public class SceneCommands extends Commands
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
    // -------------------------------------------------------------------------
 
+   public void sceneImage(String image)
+   {
+      
+   }
+   
    public void sc0()
    {
       if (action == false)
@@ -110,6 +116,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          this.button.setContentAreaFilled(false);
+         sceneImage("Arrow Right.png");
          this.button.setIcon(new ImageIcon("../Art/Icons/Arrow Right.png"));
          this.button.setBounds(800, 200, 60, 80);
          this.text = "Go right";

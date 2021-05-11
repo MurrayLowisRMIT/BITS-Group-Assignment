@@ -81,11 +81,23 @@ public class Scenes
    }
 
    // SCENE CONTENT BEGINS HERE------------------------------------------------
+   // -------------------------------------------------------------------------
 
+   public void background(String image)
+   {
+      
+   }
+   
+   public void characterImage(String image)
+   {
+      
+   }
+   
    public void s0()
    {
       this.text =
                "You have a woken in a broken-down house, with holes the walls and the roofs is missing in parts and falling down around, you can see outside though the holes in the walls, it is dawn. You look around and find there is no one else here for you to ask what happened, you see a handheld CB radio beside you, you turn it on and get a repeating message to come to Paradise City with a GPS location, you collect your things and head out to try reach Paradise City.";
+      background("Intro.png");
       this.backgroundImage = new ImageIcon("../Art/Backgrounds/Intro.png");
       this.mainPanelCommandsList = new int[] { 0 };
       this.sceneCommandsList = new int[] { 0 };
@@ -155,6 +167,7 @@ public class Scenes
 
          case 2:
             this.text = "Sir Dogmund of Wickersham:<br>\"Good sir! How dare thee!\"";
+            characterImage("Angry dog.png");
             this.characterImage = new ImageIcon("../Art/Characters/Angry dog.png");
             this.mainPanelCommandsList = new int[] { 0, 5 };
             this.sceneCommandsList = new int[] { 4 };

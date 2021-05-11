@@ -50,6 +50,7 @@ public class Globals
    {
       // clears current screen contents
       Globals.content.removeAll();
+      Globals.scenes.characterImage = null;
       // updates all scene data based on user choices
       scenes.updateScene();
       // redraws scene

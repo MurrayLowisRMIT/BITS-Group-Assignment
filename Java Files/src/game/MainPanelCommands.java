@@ -19,7 +19,8 @@ public class MainPanelCommands extends Commands
 
    protected void newButton()
    {
-      // unique placeholder features of main panel buttons
+      // features common to all main panel buttons
+      // this overwrites changes made to individual buttons below 
       this.button.setBorder(BorderFactory.createEtchedBorder());
       this.button.setVerticalTextPosition(JButton.CENTER);
 
@@ -71,6 +72,11 @@ public class MainPanelCommands extends Commands
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
    // -------------------------------------------------------------------------
 
+   
+   public void icon(String image)
+   {
+      
+   }
    // open/close inventory
    public void mc0()
    {
@@ -78,6 +84,7 @@ public class MainPanelCommands extends Commands
       // draw ----------------------------------------
       {
          this.button.setBounds(Globals.mainPanelWidth - 150, 0, 120, 50);
+         icon("Inventory.png");
          this.button.setIcon(new ImageIcon("Inventory.png"));
          // this line is exclusive to the inventory button
          this.button.setEnabled(true);

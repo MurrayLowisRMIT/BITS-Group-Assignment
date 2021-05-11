@@ -8,6 +8,7 @@ public class Stats
 
    // INVENTORY----------------------------------------------------------------
    protected int comicBook = 0;
+   protected int bandages = 0;
 
    // BOOLEANS AND OTHER FLAGS-------------------------------------------------
    // toggle whether each overlay should be active
