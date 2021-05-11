@@ -73,6 +73,7 @@ public class SceneCommands extends Commands
 
    public void sceneImage(String image)
    {
+      String packType;
       
    }
    
