@@ -85,180 +85,160 @@ public class Inventory extends Commands
 
    public void i0()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
+         if (Globals.stats.radio != 0)
          {
-            if (Globals.stats.radio != 0)
-            {
-               icon("Radio.png");
-               this.text = "Radio";
-               this.button.setBounds(20, this.buttonYPos, 120, 50);
-            }
-            else
-            {
-
-            }
+            icon("Radio.png");
+            this.text = "Radio";
+            this.button.setBounds(20, this.buttonYPos, 120, 50);
          }
          else
-         // action --------------------------------------
          {
 
          }
+      }
+      else
+      // action --------------------------------------
+      {
+
       }
    }
 
    public void i1()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
+         if (Globals.stats.comicBook != 0)
          {
-            if (Globals.stats.comicBook != 0)
-            {
-               icon("Comic.png");
-               this.text = "Comic";
-               this.button.setBounds(20, this.buttonYPos, 120, 50);
-            }
+            icon("Comic.png");
+            this.text = "Comic";
+            this.button.setBounds(20, this.buttonYPos, 120, 50);
          }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 
    public void i2()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
+         if (Globals.stats.bandages != 0)
          {
-            if (Globals.stats.bandages != 0)
-            {
-               icon("Bandages.png");
-               this.text = "Bandages";
-               this.button.setBounds(20, this.buttonYPos, 120, 50);
-            }
+            icon("Bandages.png");
+            this.text = "Bandages";
+            this.button.setBounds(20, this.buttonYPos, 120, 50);
          }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 
    public void i3()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
-         {
 
-         }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 
    public void i4()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
-         {
 
-         }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 
    public void i5()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
-         {
 
-         }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 
    public void i6()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
-         {
 
-         }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 
    public void i7()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
-         {
 
-         }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 
    public void i8()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
-         {
 
-         }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 
    public void i9()
    {
+      if (this.action == false)
+      // draw ----------------------------------------
       {
-         if (this.action == false)
-         // draw ----------------------------------------
-         {
 
-         }
-         else
-         // action --------------------------------------
-         {
+      }
+      else
+      // action --------------------------------------
+      {
 
-         }
       }
    }
 }
