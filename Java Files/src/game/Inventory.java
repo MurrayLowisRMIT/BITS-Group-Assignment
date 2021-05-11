@@ -93,10 +93,7 @@ public class Inventory extends Commands
             {
                icon("Radio.png");
                this.text = "Radio";
-               this.button.setBounds(20,
-                                     this.buttonYPos,
-                                     120,
-                                     50);
+               this.button.setBounds(20, this.buttonYPos, 120, 50);
             }
             else
             {
@@ -121,10 +118,7 @@ public class Inventory extends Commands
             {
                icon("Comic.png");
                this.text = "Comic";
-               this.button.setBounds(20,
-                                     this.buttonYPos,
-                                     120,
-                                     50);
+               this.button.setBounds(20, this.buttonYPos, 120, 50);
             }
          }
          else
@@ -145,10 +139,7 @@ public class Inventory extends Commands
             {
                icon("Bandages.png");
                this.text = "Bandages";
-               this.button.setBounds(20,
-                                     this.buttonYPos,
-                                     120,
-                                     50);
+               this.button.setBounds(20, this.buttonYPos, 120, 50);
             }
          }
          else
@@ -161,7 +152,6 @@ public class Inventory extends Commands
 
    public void i3()
    {
-      if (false)
       {
          if (this.action == false)
          // draw ----------------------------------------
@@ -178,7 +168,6 @@ public class Inventory extends Commands
 
    public void i4()
    {
-      if (false)
       {
          if (this.action == false)
          // draw ----------------------------------------
@@ -195,7 +184,6 @@ public class Inventory extends Commands
 
    public void i5()
    {
-      if (false)
       {
          if (this.action == false)
          // draw ----------------------------------------
@@ -212,7 +200,6 @@ public class Inventory extends Commands
 
    public void i6()
    {
-      if (false)
       {
          if (this.action == false)
          // draw ----------------------------------------
@@ -229,7 +216,6 @@ public class Inventory extends Commands
 
    public void i7()
    {
-      if (false)
       {
          if (this.action == false)
          // draw ----------------------------------------
@@ -246,7 +232,6 @@ public class Inventory extends Commands
 
    public void i8()
    {
-      if (false)
       {
          if (this.action == false)
          // draw ----------------------------------------
@@ -263,7 +248,6 @@ public class Inventory extends Commands
 
    public void i9()
    {
-      if (false)
       {
          if (this.action == false)
          // draw ----------------------------------------

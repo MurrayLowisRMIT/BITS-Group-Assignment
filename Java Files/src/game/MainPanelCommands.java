@@ -217,6 +217,7 @@ public class MainPanelCommands extends Commands
       // action --------------------------------------
       {
          Globals.stats.comicBookDecision = 1;
+         Globals.stats.comicBook++;
       }
    }
 
