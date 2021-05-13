@@ -6,12 +6,14 @@ public class Stats
    protected int morality = 0; // example
 
    // INVENTORY----------------------------------------------------------------
+   // repliacte this in the array below
    protected int radio = 0;
    protected int comicBook = 0;
    protected int bandages = 0;
 
    // increase this number if more items are coded into the game
    protected int[] inventory = new int[20];
+
    public void updateInventoryArray()
    {
       this.inventory[0] = radio;

@@ -128,7 +128,7 @@ public class Scenes
       background("Intro.png");
       this.text = "You have awoken in a broken-down house, with holes in the " +
                   "walls and the roofs is missing in parts and falling down " +
-                  "around, you can see outside though the holes in the walls, it is dawn. ";
+                  "around, you can see outside though the holes in the walls, it is dawn.";
       this.mainPanelCommandsList = new int[] { 0, 1 };
       this.sceneCommandsList = new int[] {};
    }
