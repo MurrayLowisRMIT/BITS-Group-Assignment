@@ -1,5 +1,7 @@
 package game;
 
+import java.awt.Font;
+
 import javax.swing.JButton;
 
 // these buttons form the interactive scene commands
@@ -19,6 +21,7 @@ public class SceneCommands extends Commands
    {
       // features common to all scene buttons
       // this overwrites changes made to individual buttons below
+      this.button.setFont(new Font("arial", Font.BOLD, 15));
       this.button.setBorder(null);
       this.button.setVerticalTextPosition(JButton.TOP);
       this.button.setContentAreaFilled(false);
@@ -108,7 +111,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          overlayImage("radio on table.png");
-         this.button.setBounds(100, 300, 49, 140);
+         this.button.setBounds(90, 470, 122, 61 + 30);
          this.text = "Pick up radio";
       }
       else
@@ -125,7 +128,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          overlayImage("Bandage.png");
-         this.button.setBounds(Globals.windowWidth - 300, 300, 49, 140);
+         this.button.setBounds(Globals.windowWidth - 180, 520, 89, 74 + 60);
          this.text = "Pick up bandages";
       }
       else
@@ -139,8 +142,8 @@ public class SceneCommands extends Commands
    // scene 3 shadowy figure
    public void sc2()
    {
+      // image needs updating!!!
       overlayImage("Shadowman.png");
-      // needs updating!!!
       this.button.setBounds((Globals.windowWidth - 425) / 2,
                             Globals.windowHeight - 600,
                             425,
@@ -187,7 +190,7 @@ public class SceneCommands extends Commands
    public void sc5()
    {
       overlayImage("intersection sign.png");
-      this.button.setBounds(Globals.windowWidth / 2, 50, 0, 0); // need image!!!
+      this.button.setBounds(Globals.windowWidth / 2, 50, 107, 257);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -196,7 +199,7 @@ public class SceneCommands extends Commands
    public void sc6()
    {
       overlayImage("Comic.png");
-      this.button.setBounds(Globals.windowWidth / 2, 100, 129, 156);
+      this.button.setBounds(Globals.windowWidth / 2, 280, 129, 156);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -204,8 +207,8 @@ public class SceneCommands extends Commands
    // scene 4 reading comic
    public void sc7()
    {
-      overlayImage("Reading comic.png"); // need image!!!
-      this.button.setBounds(Globals.windowWidth / 2, 100, 129, 156);
+      overlayImage("Reading comic.png");
+      this.button.setBounds(Globals.windowWidth / 2 - 200, 100, 498, 312);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -214,7 +217,10 @@ public class SceneCommands extends Commands
    public void sc8()
    {
       overlayImage("Broken Comic.png");
-      this.button.setBounds(50, 0, 1117, 728);
+      this.button.setBounds(350,
+                            Globals.windowHeight - Globals.mainPanelHeight - 309,
+                            480,
+                            309);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -222,8 +228,8 @@ public class SceneCommands extends Commands
    // scene 5 dog first appearance
    public void sc9()
    {
-      overlayImage("dog standing.png"); // need image!!!
-      this.button.setBounds(0, 0, 0, 0);
+      overlayImage("dog standing.png");
+      this.button.setBounds(400, 200, 244, 192);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }

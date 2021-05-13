@@ -1,5 +1,7 @@
 package game;
 
+import java.awt.Cursor;
+
 import javax.swing.BorderFactory;
 
 // these buttons form the inventory
@@ -8,7 +10,7 @@ public class Inventory extends Commands
    // I don't know what this does, but it complains without it
    private static final long serialVersionUID = 7810649496279389274L;
    // vertical position of button in inventory panel
-   private int buttonYPos = 20;
+   private int buttonYPos = 70;
 
    // localID not used
    public Inventory(int globalID, int localID)
@@ -36,6 +38,7 @@ public class Inventory extends Commands
       this.button.setBorder(BorderFactory.createEtchedBorder());
       // prevents being disabled by the main panel inventory button
       this.button.setEnabled(true);
+      this.button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
       super.buttonAction();
       // adds button to scene
@@ -80,6 +83,11 @@ public class Inventory extends Commands
       }
    }
 
+   // adds dimensions and position to button to make it visible
+   private void add()
+   {
+      this.button.setBounds(20, this.buttonYPos, 120, 50);
+   }
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
    // -------------------------------------------------------------------------
 
@@ -91,8 +99,7 @@ public class Inventory extends Commands
          if (Globals.stats.radio != 0)
          {
             icon("Radio.png");
-            this.text = "Radio";
-            this.button.setBounds(20, this.buttonYPos, 120, 50);
+            add();
          }
          else
          {
@@ -114,8 +121,7 @@ public class Inventory extends Commands
          if (Globals.stats.comicBook != 0)
          {
             icon("Comic.png");
-            this.text = "Comic";
-            this.button.setBounds(20, this.buttonYPos, 120, 50);
+            add();
          }
       }
       else
@@ -133,8 +139,7 @@ public class Inventory extends Commands
          if (Globals.stats.bandages != 0)
          {
             icon("Bandages.png");
-            this.text = "Bandages";
-            this.button.setBounds(20, this.buttonYPos, 120, 50);
+            add();
          }
       }
       else

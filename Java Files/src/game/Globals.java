@@ -47,7 +47,7 @@ public class Globals
       update();
    }
 
-   // method to refresh the screen with every player action
+   // method to refresh the screen with every button clicked
    public static void update()
    {
       // clears current screen contents

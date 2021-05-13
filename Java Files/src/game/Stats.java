@@ -6,7 +6,7 @@ public class Stats
    protected int morality = 0; // example
 
    // INVENTORY----------------------------------------------------------------
-   // repliacte this in the array below
+   // copy these into 'updateInventoryArray()' below
    protected int radio = 0;
    protected int comicBook = 0;
    protected int bandages = 0;
@@ -14,6 +14,8 @@ public class Stats
    // increase this number if more items are coded into the game
    protected int[] inventory = new int[20];
 
+   // add a line to this array for every item coded into the game
+   // the number represents its place in the array, not how many the player has
    public void updateInventoryArray()
    {
       this.inventory[0] = radio;
@@ -26,8 +28,8 @@ public class Stats
    protected boolean mainPanelOverlayActive = true;
    protected boolean sceneOverlayActive = true;
    protected boolean inventoryOverlayActive = false;
-   // the ID number of the current scene (change number for debugging)
-   protected int staticSceneID = 0;
+   // the ID number of the current scene (change number to debug a scene)
+   protected int staticSceneID = 5;
    // general purpose reusable confirmation (please reset to false when done)
    protected boolean check = false;
 

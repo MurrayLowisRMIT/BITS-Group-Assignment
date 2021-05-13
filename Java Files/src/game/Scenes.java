@@ -204,7 +204,7 @@ public class Scenes
 
    public void s4()
    {
-      background("Straight road.png");
+      background("Striaght road 1.png");
       switch (Globals.stats.comicBookDecision)
       {
          case 0:
@@ -240,7 +240,7 @@ public class Scenes
 
    public void s5()
    {
-      background("Straight road.png");
+      background("Striaght road 1.png");
       switch (Globals.stats.dogDecision)
       {
          case 0:
@@ -248,7 +248,7 @@ public class Scenes
                         "walking aimlessly around the street looking for food, " +
                         "the dog comes up to you and sits on the road in front of you.";
             this.mainPanelCommandsList = new int[] { 0, 10, 11, 12 };
-            this.sceneCommandsList = new int[] {};
+            this.sceneCommandsList = new int[] { 9 };
             break;
          case 1:
             this.text = "You put your hand out to pat the dog. The dog pulls " +

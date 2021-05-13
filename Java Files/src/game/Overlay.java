@@ -101,26 +101,6 @@ public class Overlay
    // draws inventory layer
    public void inventoryOverlay()
    {
-      // JLabel[] inventory = new JLabel[Globals.inventoryActive.length];
-      // for (int i = 0; i < Globals.inventoryActive.length; i++)
-      // {
-      // inventory[i] = new JLabel();
-      // inventory[i].setText("item" + (i + 1));
-      // inventory[i].setFont(new Font("arial", Font.PLAIN, 20));
-      // // this is the text colour
-      // inventory[i].setForeground(Color.BLACK);
-      // inventory[i].setBackground(Color.RED);
-      // inventory[i].setOpaque(true);
-      // // define border around the main text area
-      // inventory[i].setBorder(BorderFactory.createLineBorder(Color.CYAN, 3));
-      // // sets textField location relative to housing panel
-      // inventory[i].setVerticalAlignment(JLabel.TOP);
-      // inventory[i].setHorizontalAlignment(JLabel.LEFT);
-      // inventory[i].setBounds(10,
-      // 50 + 80 * i,
-      // 175,
-      // 50);
-      // }
 
       // set up main panel which includes the text area and main commands
       JPanel inventoryOverlay = new JPanel(null);
@@ -134,7 +114,23 @@ public class Overlay
                                  (Globals.windowWidth - Globals.mainPanelWidth) / 2,
                                  Globals.windowHeight);
 
-      // add buttons
+      // heading shown in inventory panel
+      JLabel inventoryHeading = new JLabel();
+      // the html adds text wrapping
+      inventoryHeading.setText("<html><p>Inventory</p></html>");
+      inventoryHeading.setFont(new Font("arial", Font.PLAIN, 25));
+      // text colour
+      inventoryHeading.setForeground(Color.RED);
+      // location relative to housing panel
+      inventoryHeading.setVerticalAlignment(JLabel.TOP);
+      inventoryHeading.setBounds(30,
+                                 10,
+                                 100,
+                                 100);
+
+      // add heading to inventory JPanel
+      inventoryOverlay.add(inventoryHeading);
+      // add inventory to JPanel as buttons
       for (int i = 0; i < Globals.stats.inventory.length; i++)
       {
          inventoryOverlay.add(Globals.inventory[i]);
