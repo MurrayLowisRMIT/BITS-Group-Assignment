@@ -67,22 +67,22 @@ public class Scenes
             s4();
             break;
          case 5:
-            s5();
+            s4_1();
             break;
          case 6:
-            s6();
+            s5();
             break;
          case 7:
-            s7();
+            s6();
             break;
          case 8:
-            s8();
+            s7();
             break;
          case 9:
-            s9();
+            s8();
             break;
          case 10:
-            s10();
+            s9();
             break;
       }
       // create new overlay with scene contents
@@ -226,7 +226,7 @@ public class Scenes
             this.text = "A flicker of resemblance to a childhood story is taken, " +
                         "but little more than a second is wasted as you walk onward. ";
             this.mainPanelCommandsList = new int[] { 0, 9 };
-            this.sceneCommandsList = new int[] {};
+            this.sceneCommandsList = new int[] { 6 };
             break;
          case 3:
             this.text = "Taking apart what once was sought after brings you a " +
@@ -238,7 +238,7 @@ public class Scenes
       }
    }
 
-   public void s5()
+   public void s4_1()
    {
       background("Striaght road 1.png");
       switch (Globals.stats.dogDecision)
@@ -267,21 +267,26 @@ public class Scenes
             this.text = "you choose to ignore the dog and continue to travel down " +
                         "the road, the dog has started to follow you.";
             this.mainPanelCommandsList = new int[] { 0, 9 };
-            this.sceneCommandsList = new int[] { 12 };
+            this.sceneCommandsList = new int[] { 15 };
             break;
       }
    }
 
-   public void s6()
+   public void s5()
    {
-      background("Straight road.png");
+      background("Striaght road 2.png");
       this.text = "As you continue along the road you sense uneasiness, as if " +
                   "you're still being watched, but as you look around there is a " +
                   "distinct lack of the living to bother you. As you wander " +
                   "further down the road you note the sun above your head. Half " +
                   "a day gone.";
-      this.mainPanelCommandsList = new int[] { 0 };
-      this.sceneCommandsList = new int[] {};
+      this.mainPanelCommandsList = new int[] { 0, 13 };
+      this.sceneCommandsList = new int[] { 16, 17 };
+   }
+
+   public void s6()
+   {
+
    }
 
    public void s7()
@@ -295,11 +300,6 @@ public class Scenes
    }
 
    public void s9()
-   {
-
-   }
-
-   public void s10()
    {
 
    }

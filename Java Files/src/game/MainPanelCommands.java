@@ -254,7 +254,7 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   // go to scene 6
+   // scene 5 - go to scene 15
    public void mc9()
    {
       if (action == false)
@@ -266,7 +266,7 @@ public class MainPanelCommands extends Commands
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = 6;
+         Globals.stats.staticSceneID = 15;
       }
    }
 
@@ -315,21 +315,22 @@ public class MainPanelCommands extends Commands
       // action --------------------------------------
       {
          Globals.stats.dogDecision = 3;
-
       }
    }
 
+   // scene 5 - check CB radio (go to scene 6)
    public void mc13()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Check CB radio";
       }
       else
       // action --------------------------------------
       {
-
+         Globals.stats.staticSceneID = 6;
       }
    }
 

@@ -142,7 +142,7 @@ public class SceneCommands extends Commands
    // scene 3 shadowy figure
    public void sc2()
    {
-      // image needs updating!!!
+      // image needs updating!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       overlayImage("Shadowman.png");
       this.button.setBounds((Globals.windowWidth - 425) / 2,
                             Globals.windowHeight - 600,
@@ -159,7 +159,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          overlayImage("Arrow Left.png");
-         this.button.setBounds(100, 200, 60, 80);
+         this.button.setBounds(100, 200, 116, 59 + 40);
          this.text = "Go left";
       }
       else
@@ -176,7 +176,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          overlayImage("Arrow Right.png");
-         this.button.setBounds(Globals.windowWidth - 160, 200, 60, 80);
+         this.button.setBounds(Globals.windowWidth - 160, 200, 116, 59 + 40);
          this.text = "Go right";
       }
       else
@@ -190,7 +190,7 @@ public class SceneCommands extends Commands
    public void sc5()
    {
       overlayImage("intersection sign.png");
-      this.button.setBounds(Globals.windowWidth / 2, 50, 107, 257);
+      this.button.setBounds(Globals.windowWidth / 2 - 107 / 2, 69, 107, 257);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -208,7 +208,9 @@ public class SceneCommands extends Commands
    public void sc7()
    {
       overlayImage("Reading comic.png");
-      this.button.setBounds(Globals.windowWidth / 2 - 200, 100, 498, 312);
+      this.button.setBounds(400,
+                            Globals.windowHeight - Globals.mainPanelHeight - 312,
+                            498, 312);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -265,7 +267,7 @@ public class SceneCommands extends Commands
    public void sc13()
    {
       overlayImage("Hand to Dog.png");
-      this.button.setBounds(Globals.mainPanelWidth / 2 + 100 - 370, 200, 482, 354);
+      this.button.setBounds(Globals.mainPanelWidth / 2 + 100 - 250, 200, 482, 354);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -274,24 +276,60 @@ public class SceneCommands extends Commands
    public void sc14()
    {
       overlayImage("dog eat bread.png");
-      this.button.setBounds(0, 0, 0, 0); // need image!!!
+      this.button.setBounds(420, 250, 214, 138);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
 
+   // dog following player
    public void sc15()
    {
-
+      overlayImage("following dog.png");
+      this.button.setBounds(800,
+                            Globals.windowHeight - Globals.mainPanelHeight - 61,
+                            145,
+                            61);
+      this.button.setEnabled(true);
+      this.button.setCursor(null);
    }
 
+   // shelter in distance
    public void sc16()
    {
-
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         overlayImage("shelter.png");
+         this.button.setBounds(200,
+                               261,
+                               145,
+                               61);
+         this.text = "Search for shelter";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 10;
+      }
    }
 
+   // scene 5 - continue to walk
    public void sc17()
    {
-
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(550,
+                               250,
+                               200,
+                               50);
+         this.text = "Continue to walk";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 10;
+      }
    }
 
    public void sc18()

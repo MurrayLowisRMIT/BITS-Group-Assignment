@@ -29,7 +29,7 @@ public class Stats
    protected boolean sceneOverlayActive = true;
    protected boolean inventoryOverlayActive = false;
    // the ID number of the current scene (change number to debug a scene)
-   protected int staticSceneID = 5;
+   protected int staticSceneID = 6;
    // general purpose reusable confirmation (please reset to false when done)
    protected boolean check = false;
 
