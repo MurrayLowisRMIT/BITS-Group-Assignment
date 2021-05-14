@@ -26,6 +26,8 @@ public abstract class Commands extends JPanel
    protected int localID;
    // decides whether to run the 'draw button function' or 'button clicked function'
    protected static boolean action = false;
+   // allows button to maintain unique appearance independent of other factors
+   protected boolean enabled;
 
    public Commands(int globalID, int localID)
    {
@@ -102,27 +104,14 @@ public abstract class Commands extends JPanel
    // method to select image to use as button icon
    protected void icon(String image)
    {
-      if (Globals.stats.artPack == 1)
-      {
-         this.button.setIcon(new ImageIcon("../Art/Final Art/Icon/" + image));
-      }
-      else
-      {
-         this.button.setIcon(new ImageIcon("../Art/Placeholder Art/Icon/" + image));
-      }
+      this.button.setIcon(new ImageIcon("../Art/" + Globals.stats.artPack +
+                                        " Art/Icon/" + image));
    }
 
    // method to select image for overlaid buttons/images etc.
    public void overlayImage(String image)
    {
-      if (Globals.stats.artPack == 1)
-      {
-         this.button.setIcon(new ImageIcon("../Art/Final Art/Overlay/" + image));
-      }
-      else
-      {
-         this.button
-                  .setIcon(new ImageIcon("../Art/Placeholder Art/Overlay/" + image));
-      }
+      this.button.setIcon(new ImageIcon("../Art/" + Globals.stats.artPack +
+                                        " Art/Overlay/" + image));
    }
 }

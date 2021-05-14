@@ -22,8 +22,12 @@ public class SceneCommands extends Commands
    {
       this.button.setFont(new Font("arial", Font.BOLD, 15));
       this.button.setBorder(null);
-      this.button.setVerticalTextPosition(JButton.TOP);
-      this.button.setContentAreaFilled(false);
+      if (!this.enabled)
+      {
+         this.button.setVerticalTextPosition(JButton.TOP);
+         this.button.setContentAreaFilled(false);
+      }
+      this.enabled = true;
 
       super.buttonAction();
       // adds button to scene
@@ -34,6 +38,18 @@ public class SceneCommands extends Commands
    {
       switch (this.globalID)
       {
+         case -4:
+            title();
+            break;
+         case -3:
+            startGame();
+            break;
+         case -2:
+            tutorial();
+            break;
+         case -1:
+            artPack();
+            break;
          case 0:
             sc0();
             break;
@@ -102,6 +118,83 @@ public class SceneCommands extends Commands
 
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
    // -------------------------------------------------------------------------
+
+   // start game
+   public void title()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         overlayImage("Title.png");
+         this.button.setBounds((Globals.windowWidth - 400) / 2, 50, 400, 200);
+         this.enabled = true;
+         this.button.setEnabled(true);
+         this.button.setCursor(null);
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 0;
+      }
+   }
+
+   // start game
+   public void startGame()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         overlayImage("New Game.png");
+         this.button.setBounds((Globals.windowWidth - 200) / 2, 300, 200, 80);
+         this.enabled = true;
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 0;
+      }
+   }
+
+   // start tutorial
+   public void tutorial()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         overlayImage("Tutorial.png");
+         this.button.setBounds((Globals.windowWidth - 200) / 2, 400, 200, 80);
+         this.enabled = true;
+      }
+      else
+      // action --------------------------------------
+      {
+
+      }
+   }
+
+   // change art pack
+   public void artPack()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         overlayImage("Art Pack.png");
+         this.button.setBounds((Globals.windowWidth - 200) / 2, 500, 200, 80);
+         this.enabled = true;
+      }
+      else
+      // action --------------------------------------
+      {
+         if (Globals.stats.artPack == "Final")
+         {
+            Globals.stats.artPack = "Placeholder";
+         }
+         else
+         {
+            Globals.stats.artPack = "Final";
+         }
+      }
+   }
 
    // pick up radio
    public void sc0()
@@ -333,7 +426,7 @@ public class SceneCommands extends Commands
 
    public void sc18()
    {
-         
+
    }
 
    public void sc19()

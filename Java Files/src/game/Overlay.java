@@ -14,7 +14,8 @@ public class Overlay
       // the overlay that needs to be drawn on top is to be listed first
       if (Globals.stats.inventoryOverlayActive)
          inventoryOverlay();
-      mainPanelOverlay();
+      if (Globals.stats.staticSceneID != -1)
+         mainPanelOverlay();
       sceneOverlay();
       background();
    }
@@ -136,7 +137,8 @@ public class Overlay
       // heading shown in inventory panel
       JLabel inventoryHeading = new JLabel();
       // the html adds text wrapping
-      inventoryHeading.setText("<html><p><center>Inventory<br><br></center></p></html>");
+      inventoryHeading
+               .setText("<html><p><center>Inventory<br><br></center></p></html>");
       inventoryHeading.setFont(new Font("arial", Font.PLAIN, 25));
       // text colour
       inventoryHeading.setForeground(new Color(53, 46, 10));

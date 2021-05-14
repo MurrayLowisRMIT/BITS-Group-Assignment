@@ -51,6 +51,9 @@ public class Scenes
       // outputs scene contents based on the current sceneID
       switch (Globals.stats.staticSceneID)
       {
+         case -1:
+            mainMenu();
+            break;
          case 0:
             s0();
             break;
@@ -95,35 +98,25 @@ public class Scenes
    // method to select image to use as button icon
    public void background(String image)
    {
-      if (Globals.stats.artPack == 1)
-      {
-         this.backgroundImage =
-                  new ImageIcon("../Art/Final Art/Background/" + image);
-      }
-      else
-      {
-         this.backgroundImage =
-                  new ImageIcon("../Art/Placeholder Art/Background/" + image);
-      }
+      this.backgroundImage = new ImageIcon("../Art/" + Globals.stats.artPack +
+                                           " Art/Background/" + image);
    }
 
    // method to select character image
    public void characterImage(String image)
    {
-      if (Globals.stats.artPack == 1)
-      {
-         this.characterImage =
-                  new ImageIcon("../Art/Final Art/Character/" + image);
-      }
-      else
-      {
-         this.characterImage =
-                  new ImageIcon("../Art/Placeholder Art/Character/" + image);
-      }
+      this.characterImage = new ImageIcon("../Art/" + Globals.stats.artPack +
+                                          " Art/Character/" + image);
    }
 
    // SCENE CONTENT BEGINS HERE------------------------------------------------
    // -------------------------------------------------------------------------
+
+   public void mainMenu()
+   {
+      this.mainPanelCommandsList = new int[] {};
+      this.sceneCommandsList = new int[] { -4, -3, -2, -1 };
+   }
 
    public void s0()
    {

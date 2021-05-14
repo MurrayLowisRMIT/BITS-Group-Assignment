@@ -10,9 +10,6 @@ public class MainPanelCommands extends Commands
    // I don't know what this does, but it complains without it
    private static final long serialVersionUID = 7810649496279389274L;
 
-   // allows button to maintain unique appearance independent of other factors
-   private boolean enabled;
-
    public MainPanelCommands(int globalID, int localID)
    {
       super(globalID, localID);

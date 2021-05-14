@@ -29,7 +29,7 @@ public class Stats
    protected boolean sceneOverlayActive = true;
    protected boolean inventoryOverlayActive = false;
    // the ID number of the current scene (change number to debug a scene)
-   protected int staticSceneID = 0;
+   protected int staticSceneID = -1;
    // general purpose reusable confirmation (please reset to false when done)
    protected boolean check = false;
 
@@ -37,6 +37,6 @@ public class Stats
    protected int comicBookDecision = 0;
    // 0 = start state, 1 = pat dog, 2 = feed dog, 3 = ignore dog
    protected int dogDecision = 0;
-   // the art pack chosen, 0 = placeholder, 1 = final
-   protected int artPack = 0;
+   // the art pack chosen
+   protected String artPack = "Placeholder";
 }
