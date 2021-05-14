@@ -131,11 +131,6 @@ public class SceneCommands extends Commands
          this.button.setEnabled(true);
          this.button.setCursor(null);
       }
-      else
-      // action --------------------------------------
-      {
-         Globals.stats.staticSceneID = 0;
-      }
    }
 
    // start game
