@@ -25,13 +25,12 @@ public abstract class Commands extends JPanel
    // local ID number of the selected button
    protected int localID;
    // decides whether to run the 'draw button function' or 'button clicked function'
-   protected boolean action = false;
+   protected static boolean action = false;
 
    public Commands(int globalID, int localID)
    {
       this.globalID = globalID;
       this.localID = localID;
-      buttonTemplate();
    }
 
    protected void buttonTemplate()
@@ -45,7 +44,7 @@ public abstract class Commands extends JPanel
       // button background colour
       this.button.setBackground(Color.WHITE);
       // set button borders
-      this.button.setBorder(BorderFactory.createEtchedBorder());
+      this.button.setBorder(BorderFactory.createRaisedSoftBevelBorder());
       // add image to button
       this.button.setIcon(null);
       // these overwrite the image when hovered etc. (setIcon() must not be null)
@@ -75,9 +74,10 @@ public abstract class Commands extends JPanel
 
       selectCommand();
 
-      // converting to this.text and using html allows for text wrapping
+      // converting to this.text and using html allows for text formatting
       // keep this after 'selectCommand()' method
-      this.button.setText("<html><p><center>" + this.text + "</center></p></html>");
+      this.button.setText("<html><p><center>" + this.text +
+                          "<br><br></center></p></html>");
    }
 
    protected abstract void selectCommand();

@@ -17,10 +17,9 @@ public class SceneCommands extends Commands
       newButton();
    }
 
+   // includes features common to all scene buttons
    protected void newButton()
    {
-      // features common to all scene buttons
-      // this overwrites changes made to individual buttons below
       this.button.setFont(new Font("arial", Font.BOLD, 15));
       this.button.setBorder(null);
       this.button.setVerticalTextPosition(JButton.TOP);
@@ -111,7 +110,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          overlayImage("radio on table.png");
-         this.button.setBounds(90, 470, 122, 61 + 30);
+         this.button.setBounds(90, 470, 122, 61 + 60);
          this.text = "Pick up radio";
       }
       else
@@ -142,12 +141,11 @@ public class SceneCommands extends Commands
    // scene 3 shadowy figure
    public void sc2()
    {
-      // image needs updating!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       overlayImage("Shadowman.png");
       this.button.setBounds((Globals.windowWidth - 425) / 2,
-                            Globals.windowHeight - 600,
-                            425,
-                            542);
+                            Globals.windowHeight - Globals.mainPanelHeight - 207,
+                            159,
+                            207);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -159,7 +157,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          overlayImage("Arrow Left.png");
-         this.button.setBounds(100, 200, 116, 59 + 40);
+         this.button.setBounds(100, 200, 116, 59 + 60);
          this.text = "Go left";
       }
       else
@@ -176,13 +174,13 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          overlayImage("Arrow Right.png");
-         this.button.setBounds(Globals.windowWidth - 160, 200, 116, 59 + 40);
+         this.button.setBounds(Globals.windowWidth - 160, 200, 116, 59 + 60);
          this.text = "Go right";
       }
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = 5;
+         Globals.stats.staticSceneID = 104;
       }
    }
 
@@ -210,7 +208,8 @@ public class SceneCommands extends Commands
       overlayImage("Reading comic.png");
       this.button.setBounds(400,
                             Globals.windowHeight - Globals.mainPanelHeight - 312,
-                            498, 312);
+                            498,
+                            312);
       this.button.setEnabled(true);
       this.button.setCursor(null);
    }
@@ -236,16 +235,20 @@ public class SceneCommands extends Commands
       this.button.setCursor(null);
    }
 
-   // scene 5 dog being patted
+   // scene 1 hand holding radio
    public void sc10()
    {
-      overlayImage("dog standing.png"); // need image!!!
-      this.button.setBounds(0, 0, 0, 0);
+      overlayImage("hand holding radio.png");
+      this.button.setBounds(400,
+                            Globals.windowHeight - Globals.mainPanelHeight - 450,
+                            446,
+                            450);
       this.button.setEnabled(true);
       this.button.setCursor(null);
+
    }
 
-   // scene 5 dog being fed
+   // scene 5 dog being petted
    public void sc11()
    {
       overlayImage("Dog front.png");
@@ -254,16 +257,12 @@ public class SceneCommands extends Commands
       this.button.setCursor(null);
    }
 
-   // scene 5 dog being ignored
    public void sc12()
    {
-      overlayImage("Dog front.png");
-      this.button.setBounds(Globals.mainPanelWidth / 2 + 400, 300, 370, 523);
-      this.button.setEnabled(true);
-      this.button.setCursor(null);
+
    }
 
-   // scene 5 hand patting dog
+   // scene 5 hand petting dog
    public void sc13()
    {
       overlayImage("Hand to Dog.png");
@@ -334,7 +333,7 @@ public class SceneCommands extends Commands
 
    public void sc18()
    {
-
+         
    }
 
    public void sc19()

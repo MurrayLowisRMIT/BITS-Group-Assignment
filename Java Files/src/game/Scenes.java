@@ -67,7 +67,7 @@ public class Scenes
             s4();
             break;
          case 5:
-            s4_1();
+            s5();
             break;
          case 6:
             s5();
@@ -84,6 +84,8 @@ public class Scenes
          case 10:
             s9();
             break;
+         case 104:
+            s4_1();
       }
       // create new overlay with scene contents
       createCommands(this.mainPanelCommandsList, this.sceneCommandsList);
@@ -140,7 +142,7 @@ public class Scenes
       if (Globals.stats.check)
       {
          Globals.stats.check = false;
-         this.text = "You pick up some bandages";
+         this.text = "You pick up some bandages.";
          this.mainPanelCommandsList = new int[] { 0, 3 };
          if (Globals.stats.radio == 0)
          {
@@ -148,7 +150,7 @@ public class Scenes
          }
          else
          {
-            this.sceneCommandsList = new int[] {};
+            this.sceneCommandsList = new int[] { 10 };
          }
       }
       else if (Globals.stats.radio == 0)
@@ -174,11 +176,11 @@ public class Scenes
          this.mainPanelCommandsList = new int[] { 0, 4 };
          if (Globals.stats.bandages == 0)
          {
-            this.sceneCommandsList = new int[] { 1 };
+            this.sceneCommandsList = new int[] { 1, 10 };
          }
          else
          {
-            this.sceneCommandsList = new int[] {};
+            this.sceneCommandsList = new int[] { 10 };
          }
       }
    }
@@ -223,10 +225,11 @@ public class Scenes
             this.sceneCommandsList = new int[] { 7 };
             break;
          case 2:
+            background("Striaght road 3.png");
             this.text = "A flicker of resemblance to a childhood story is taken, " +
                         "but little more than a second is wasted as you walk onward. ";
             this.mainPanelCommandsList = new int[] { 0, 9 };
-            this.sceneCommandsList = new int[] { 6 };
+            this.sceneCommandsList = new int[] {};
             break;
          case 3:
             this.text = "Taking apart what once was sought after brings you a " +
@@ -264,7 +267,7 @@ public class Scenes
             this.sceneCommandsList = new int[] { 14 };
             break;
          case 3:
-            this.text = "you choose to ignore the dog and continue to travel down " +
+            this.text = "You ignore the dog and continue to travel down " +
                         "the road, the dog has started to follow you.";
             this.mainPanelCommandsList = new int[] { 0, 9 };
             this.sceneCommandsList = new int[] { 15 };
@@ -279,7 +282,8 @@ public class Scenes
                   "you're still being watched, but as you look around there is a " +
                   "distinct lack of the living to bother you. As you wander " +
                   "further down the road you note the sun above your head. Half " +
-                  "a day gone.";
+                  "a day gone." +
+                  "<br><br>You wonder if you should try your radio again.";
       this.mainPanelCommandsList = new int[] { 0, 13 };
       this.sceneCommandsList = new int[] { 16, 17 };
    }

@@ -1,12 +1,17 @@
 package game;
 
-import javax.swing.BorderFactory;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JButton;
 
 // these buttons form the commands in the main panel
 public class MainPanelCommands extends Commands
 {
    // I don't know what this does, but it complains without it
    private static final long serialVersionUID = 7810649496279389274L;
+
+   // allows button to maintain unique appearance independent of other factors
+   private boolean enabled;
 
    public MainPanelCommands(int globalID, int localID)
    {
@@ -15,11 +20,24 @@ public class MainPanelCommands extends Commands
       newButton();
    }
 
+   // includes features common to all main panel buttons
    protected void newButton()
    {
-      // features common to all main panel buttons
-      // this overwrites changes made to individual buttons below
-      this.button.setBorder(BorderFactory.createEtchedBorder());
+      // changes colour if inventory is open
+      if (Globals.stats.inventoryOverlayActive & !this.enabled)
+      {
+         this.button.setForeground(new Color(123, 116, 81));
+         this.button.setBackground(new Color(227, 225, 213));
+      }
+      else
+      {
+         this.button.setForeground(new Color(53, 46, 10));
+         this.button.setBackground(new Color(243, 235, 197));
+      }
+      this.button.setFont(new Font("arial", Font.BOLD, 15));
+      this.button.setVerticalAlignment(JButton.CENTER);
+      // reset 'enabled' check
+      this.enabled = true;
 
       super.buttonAction();
       // adds button to scene
@@ -102,13 +120,15 @@ public class MainPanelCommands extends Commands
    // open/close inventory
    public void mc0()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
          icon("Inventory.png");
          this.button.setBounds(Globals.mainPanelWidth - 150, 0, 120, 50);
          // stops button being disabled by the inventory overlay
          this.button.setEnabled(true);
+         // allow this button to keep colour with inventory open
+         this.enabled = true;
       }
       else
       // action --------------------------------------
@@ -116,10 +136,14 @@ public class MainPanelCommands extends Commands
          if (Globals.stats.inventoryOverlayActive)
          {
             Globals.stats.inventoryOverlayActive = false;
+            Globals.stats.mainPanelOverlayActive = true;
+            Globals.stats.sceneOverlayActive = true;
          }
          else
          {
             Globals.stats.inventoryOverlayActive = true;
+            Globals.stats.mainPanelOverlayActive = false;
+            Globals.stats.sceneOverlayActive = false;
          }
       }
    }
@@ -168,7 +192,7 @@ public class MainPanelCommands extends Commands
       else
       // action --------------------------------------
       {
-         // function determined by scene class statements
+         // blank - function determined by scene class statements
       }
    }
 
@@ -254,7 +278,7 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   // scene 5 - go to scene 15
+   // scene 4 - go to scene 5
    public void mc9()
    {
       if (action == false)
@@ -266,11 +290,11 @@ public class MainPanelCommands extends Commands
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = 15;
+         Globals.stats.staticSceneID = 5;
       }
    }
 
-   // scene 5 pat dog
+   // scene 4_1 pat dog
    public void mc10()
    {
       if (action == false)
@@ -286,7 +310,7 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   // scene 5 feed dog
+   // scene 4_1 feed dog
    public void mc11()
    {
       if (action == false)
@@ -302,7 +326,7 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   // scene 5 ignore dog
+   // scene 4_1 ignore dog
    public void mc12()
    {
       if (action == false)
@@ -318,19 +342,17 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   // scene 5 - check CB radio (go to scene 6)
    public void mc13()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-         this.text = "Check CB radio";
+         
       }
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = 6;
+         
       }
    }
 

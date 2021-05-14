@@ -14,11 +14,8 @@ public class Overlay
       // the overlay that needs to be drawn on top is to be listed first
       if (Globals.stats.inventoryOverlayActive)
          inventoryOverlay();
-      if (Globals.stats.mainPanelOverlayActive)
-         mainPanelOverlay();
-      if (Globals.stats.sceneOverlayActive)
-         sceneOverlay();
-
+      mainPanelOverlay();
+      sceneOverlay();
       background();
    }
 
@@ -29,10 +26,18 @@ public class Overlay
       JLabel textField = new JLabel();
       // read story text for scene - the html adds text wrapping
       textField.setText("<html><p>" + Globals.scenes.text + "</p></html>");
-      textField.setFont(new Font("arial", Font.PLAIN, 15));
-      // this is the text colour
-      textField.setForeground(Color.RED);
-      textField.setBackground(Color.BLACK);
+      textField.setFont(new Font("arial", Font.BOLD, 15));
+      // this is the text colour - changes when inventory open
+      if (Globals.stats.inventoryOverlayActive)
+      {
+         textField.setForeground(new Color(123, 116, 81));
+         textField.setBackground(new Color(227, 225, 213));
+      }
+      else
+      {
+         textField.setForeground(new Color(53, 46, 10));
+         textField.setBackground(new Color(243, 235, 197));
+      }
       // get character image for scene if applicable
       textField.setIcon(Globals.scenes.characterImage);
       // set location of text relative to image
@@ -40,7 +45,7 @@ public class Overlay
       textField.setVerticalTextPosition(JLabel.TOP);
       textField.setOpaque(true);
       // define border around the main text area
-      textField.setBorder(BorderFactory.createLineBorder(Color.CYAN, 3));
+      textField.setBorder(BorderFactory.createLineBorder(new Color(85, 73, 17), 3));
       // sets textField location relative to housing panel
       textField.setVerticalAlignment(JLabel.TOP);
       textField.setHorizontalAlignment(JLabel.LEFT);
@@ -52,7 +57,14 @@ public class Overlay
       JPanel buttonPanel = new JPanel();
       // allows manually specifying where panels are placed
       buttonPanel.setLayout(null);
-      buttonPanel.setBackground(Color.DARK_GRAY);
+      if (Globals.stats.inventoryOverlayActive)
+      {
+         buttonPanel.setBackground(new Color(188, 182, 152));
+      }
+      else
+      {
+         buttonPanel.setBackground(new Color(226, 206, 114));
+      }
       // panel position and dimensions
       buttonPanel.setBounds(10,
                             (Globals.mainPanelHeight - 10) / 2 + 20,
@@ -63,7 +75,14 @@ public class Overlay
       JPanel mainPanel = new JPanel(null);
       // allows manually specifying where panels are placed
       mainPanel.setLayout(null);
-      mainPanel.setBackground(Color.DARK_GRAY);
+      if (Globals.stats.inventoryOverlayActive)
+      {
+         mainPanel.setBackground(new Color(188, 182, 152));
+      }
+      else
+      {
+         mainPanel.setBackground(new Color(226, 206, 114));
+      }
       // panel position and dimensions
       mainPanel.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2,
                           Globals.windowHeight - Globals.mainPanelHeight,
@@ -106,7 +125,7 @@ public class Overlay
       JPanel inventoryOverlay = new JPanel(null);
       // allows manually specifying where panels are placed
       inventoryOverlay.setLayout(null);
-      inventoryOverlay.setBackground(Color.BLACK);
+      inventoryOverlay.setBackground(new Color(226, 206, 114));
       // panel position and dimensions
       inventoryOverlay.setBounds((Globals.windowWidth - Globals.mainPanelWidth) / 2 +
                                  Globals.mainPanelWidth,
@@ -117,16 +136,17 @@ public class Overlay
       // heading shown in inventory panel
       JLabel inventoryHeading = new JLabel();
       // the html adds text wrapping
-      inventoryHeading.setText("<html><p>Inventory</p></html>");
+      inventoryHeading.setText("<html><p><center>Inventory<br><br></center></p></html>");
       inventoryHeading.setFont(new Font("arial", Font.PLAIN, 25));
       // text colour
-      inventoryHeading.setForeground(Color.RED);
+      inventoryHeading.setForeground(new Color(53, 46, 10));
       // location relative to housing panel
-      inventoryHeading.setVerticalAlignment(JLabel.TOP);
-      inventoryHeading.setBounds(30,
-                                 10,
-                                 100,
-                                 100);
+      inventoryHeading.setVerticalAlignment(JLabel.CENTER);
+      inventoryHeading.setHorizontalAlignment(JLabel.CENTER);
+      inventoryHeading.setBounds(0,
+                                 0,
+                                 (Globals.windowWidth - Globals.mainPanelWidth) / 2,
+                                 70);
 
       // add heading to inventory JPanel
       inventoryOverlay.add(inventoryHeading);

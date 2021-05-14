@@ -1,8 +1,7 @@
 package game;
 
+import java.awt.Color;
 import java.awt.Cursor;
-
-import javax.swing.BorderFactory;
 
 // these buttons form the inventory
 public class Inventory extends Commands
@@ -31,14 +30,13 @@ public class Inventory extends Commands
       newButton();
    }
 
+   // includes features common to all inventory panel buttons
    protected void newButton()
    {
-      // features common to all inventory panel buttons
-      // this overwrites changes made to individual buttons below
-      this.button.setBorder(BorderFactory.createEtchedBorder());
-      // prevents being disabled by the main panel inventory button
+      // these two lines prevent being disabled by the main panel inventory button
       this.button.setEnabled(true);
       this.button.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+      this.button.setBackground(new Color(243, 235, 197));
 
       super.buttonAction();
       // adds button to scene
@@ -83,7 +81,7 @@ public class Inventory extends Commands
       }
    }
 
-   // adds dimensions and position to button to make it visible
+   // adds dimensions and position to make button visible
    private void add()
    {
       this.button.setBounds(20, this.buttonYPos, 120, 50);
@@ -93,7 +91,7 @@ public class Inventory extends Commands
 
    public void i0()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
          if (Globals.stats.radio != 0)
@@ -103,7 +101,10 @@ public class Inventory extends Commands
          }
          else
          {
-
+            if (Globals.stats.staticSceneID == 5)
+            {
+               Globals.stats.staticSceneID = 6;
+            }
          }
       }
       else
@@ -115,7 +116,7 @@ public class Inventory extends Commands
 
    public void i1()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
          if (Globals.stats.comicBook != 0)
@@ -133,7 +134,7 @@ public class Inventory extends Commands
 
    public void i2()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
          if (Globals.stats.bandages != 0)
@@ -151,7 +152,7 @@ public class Inventory extends Commands
 
    public void i3()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
 
@@ -165,7 +166,7 @@ public class Inventory extends Commands
 
    public void i4()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
 
@@ -179,7 +180,7 @@ public class Inventory extends Commands
 
    public void i5()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
 
@@ -193,7 +194,7 @@ public class Inventory extends Commands
 
    public void i6()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
 
@@ -207,7 +208,7 @@ public class Inventory extends Commands
 
    public void i7()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
 
@@ -221,7 +222,7 @@ public class Inventory extends Commands
 
    public void i8()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
 
@@ -235,7 +236,7 @@ public class Inventory extends Commands
 
    public void i9()
    {
-      if (this.action == false)
+      if (action == false)
       // draw ----------------------------------------
       {
 
