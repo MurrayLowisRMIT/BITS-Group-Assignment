@@ -119,7 +119,7 @@ public class SceneCommands extends Commands
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
    // -------------------------------------------------------------------------
 
-   // start game
+   // main menu title
    public void title()
    {
       if (action == false)
@@ -133,7 +133,7 @@ public class SceneCommands extends Commands
       }
    }
 
-   // start game
+   // start game button
    public void startGame()
    {
       if (action == false)

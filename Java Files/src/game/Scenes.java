@@ -89,6 +89,7 @@ public class Scenes
             break;
          case 104:
             s4_1();
+            break;
       }
       // create new overlay with scene contents
       createCommands(this.mainPanelCommandsList, this.sceneCommandsList);
