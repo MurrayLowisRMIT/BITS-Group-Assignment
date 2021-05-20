@@ -2,6 +2,7 @@ package game;
 
 import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 // these buttons form the interactive scene commands
@@ -127,8 +128,6 @@ public class SceneCommands extends Commands
       {
          overlayImage("Title.png");
          this.button.setBounds((Globals.windowWidth - 400) / 2, 50, 400, 200);
-         this.enabled = true;
-         this.button.setEnabled(true);
          this.button.setCursor(null);
       }
    }
@@ -142,6 +141,7 @@ public class SceneCommands extends Commands
          overlayImage("New Game.png");
          this.button.setBounds((Globals.windowWidth - 200) / 2, 300, 200, 80);
          this.enabled = true;
+         this.button.setContentAreaFilled(false);
       }
       else
       // action --------------------------------------
@@ -159,6 +159,7 @@ public class SceneCommands extends Commands
          overlayImage("Tutorial.png");
          this.button.setBounds((Globals.windowWidth - 200) / 2, 400, 200, 80);
          this.enabled = true;
+         this.button.setContentAreaFilled(false);
       }
       else
       // action --------------------------------------
@@ -176,6 +177,7 @@ public class SceneCommands extends Commands
          overlayImage("Art Pack.png");
          this.button.setBounds((Globals.windowWidth - 200) / 2, 500, 200, 80);
          this.enabled = true;
+         this.button.setContentAreaFilled(false);
       }
       else
       // action --------------------------------------

@@ -115,6 +115,7 @@ public class Scenes
 
    public void mainMenu()
    {
+      background("Title Screen.png");
       this.mainPanelCommandsList = new int[] {};
       this.sceneCommandsList = new int[] { -4, -3, -2, -1 };
    }
