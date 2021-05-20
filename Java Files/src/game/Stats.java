@@ -38,5 +38,5 @@ public class Stats
    // 0 = start state, 1 = pat dog, 2 = feed dog, 3 = ignore dog
    protected int dogDecision = 0;
    // the art pack chosen
-   protected String artPack = "Placeholder";
+   protected String artPack = "Final";
 }

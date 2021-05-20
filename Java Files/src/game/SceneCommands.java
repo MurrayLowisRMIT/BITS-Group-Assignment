@@ -244,8 +244,8 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-         overlayImage("Arrow Left.png");
-         this.button.setBounds(100, 200, 116, 59 + 60);
+         this.button.setHorizontalAlignment(JButton.LEFT);
+         this.button.setBounds(Globals.windowWidth/2 - 120, 120, 110, 60);
          this.text = "Go left";
       }
       else
@@ -261,8 +261,8 @@ public class SceneCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-         overlayImage("Arrow Right.png");
-         this.button.setBounds(Globals.windowWidth - 160, 200, 116, 59 + 60);
+         this.button.setHorizontalAlignment(JButton.RIGHT);
+         this.button.setBounds(Globals.windowWidth/2 + 30, 120, 110, 60);
          this.text = "Go right";
       }
       else
