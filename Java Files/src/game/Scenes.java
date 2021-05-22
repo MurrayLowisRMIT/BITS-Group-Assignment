@@ -209,7 +209,7 @@ public class Scenes
                         "wildlife sounds. As you traverse further you stumble " +
                         "upon a torn comic that draws your attention. It reminds " +
                         "you of a home where you read similar stories as a child.";
-            this.mainPanelCommandsList = new int[] { 0, 6, 7, 8 };
+            this.mainPanelCommandsList = new int[] { 0, 7, 8 };
             this.sceneCommandsList = new int[] { 6 };
             break;
          case 1:

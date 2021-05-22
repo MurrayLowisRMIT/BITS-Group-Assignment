@@ -225,20 +225,16 @@ public class MainPanelCommands extends Commands
       }
    }
 
-   // scene 4 take comic
    public void mc6()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-         this.button.setBounds(80, 0, 120, 50);
-         this.text = "Take the comic";
       }
       else
       // action --------------------------------------
       {
-         Globals.stats.comicBookDecision = 1;
-         Globals.stats.comicBook++;
+
       }
    }
 
@@ -344,12 +340,12 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-         
+
       }
       else
       // action --------------------------------------
       {
-         
+
       }
    }
 

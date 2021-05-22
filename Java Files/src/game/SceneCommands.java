@@ -245,7 +245,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          this.button.setHorizontalAlignment(JButton.LEFT);
-         this.button.setBounds(Globals.windowWidth/2 - 120, 120, 110, 60);
+         this.button.setBounds(Globals.windowWidth / 2 - 120, 120, 110, 60);
          this.text = "Go left";
       }
       else
@@ -262,7 +262,7 @@ public class SceneCommands extends Commands
       // draw ----------------------------------------
       {
          this.button.setHorizontalAlignment(JButton.RIGHT);
-         this.button.setBounds(Globals.windowWidth/2 + 30, 120, 110, 60);
+         this.button.setBounds(Globals.windowWidth / 2 + 30, 120, 110, 60);
          this.text = "Go right";
       }
       else
@@ -284,10 +284,19 @@ public class SceneCommands extends Commands
    // scene 4 comic
    public void sc6()
    {
-      overlayImage("Comic.png");
-      this.button.setBounds(Globals.windowWidth / 2, 280, 129, 156);
-      this.button.setEnabled(true);
-      this.button.setCursor(null);
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         overlayImage("Comic.png");
+         this.button.setBounds(Globals.windowWidth / 2, 280, 129, 156);
+         this.text = "Pick up comic";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.comicBookDecision = 1;
+         Globals.stats.comicBook++;
+      }
    }
 
    // scene 4 reading comic
