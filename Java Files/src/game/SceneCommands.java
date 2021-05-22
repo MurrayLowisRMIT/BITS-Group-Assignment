@@ -1,8 +1,6 @@
 package game;
 
 import java.awt.Font;
-
-import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 // these buttons form the interactive scene commands
