@@ -374,8 +374,9 @@ public class MainPanelCommands extends Commands {
 
 //	----------------------------------------------------------
 //	
-// -----------------------------------------------------------
-//got to Radio Path
+// -----------------------------------------------------------tom
+	
+//RADIO CHOICE
 	public void mc13() {
 
 		if (action == false)
@@ -390,7 +391,7 @@ public class MainPanelCommands extends Commands {
 			Globals.stats.pathSc5Decision = 3;
 		}
 	}
-
+// N/a
 	// shelter path
 	public void mc14() {
 		if (action == false)
@@ -404,7 +405,7 @@ public class MainPanelCommands extends Commands {
 
 		}
 	}
-
+// N/a
 //Continue path
 	public void mc15() {
 		if (action == false)

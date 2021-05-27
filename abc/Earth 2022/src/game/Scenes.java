@@ -64,125 +64,125 @@ public class Scenes {
 		case 5:
 			s5();
 			break;
-		case 6:
-			s5();
-			break;
-		case 401:
-			s6();
-			break;
-		case 8:
-			s7();
-			break;
-		case 9:
-			s8();
-			break;
-		case 10:
-			s6();
-			break;
 		case 104:
 			s4_1();
 			break;
+		//==========tom 
+			//dont think i need the below, edited out just incase needed
+//		case 400 1:
+//			s4006();
+//			break;
+//		case 400 8:
+//			s4007();
+//			break;
+//		case 400 9:
+//			s4008();
+//			break;
+//		case 400 10:
+//			s4006();
+//			break;
+
 		case 402:
-			s6();
+			s406();
 			break;
 		case 403:
-			s7();
+			s407();
 			break;
 		case 404:
-			s8();
+			s408();
 			break;
 		case 405:
-			s9();
+			s409();
 			break;
 		case 406:
-			s10();
+			s410();
 			break;
 		case 407:
-			s11();
+			s411();
 			break;
 		case 408:
-			s12();
+			s412();
 			break;
 		case 409:
-			s13();
+			s413();
 			break;
 		case 410:
-			s14();
+			s414();
 			break;
 		case 411:
-			sc15();
+			s415();
 			break;
 		case 412:
-			sc16();
+			s416();
 			break;
 		case 413:
-			sc17();
+			s417();
 			break;
 		case 414:
-			sc18();
+			s418();
 			break;
 		case 415:
-			sc19();
+			s419();
 			break;
 		case 416:
-			sc20();
+			s420();
 			break;
 		case 417:
-			sc21();
+			s421();
 			break;
 		case 418:
-			sc22();
+			s422();
 			break;
 		case 419:
-			sc23();
+			s423();
 			break;
 		case 420:
-			sc24();
+			s424();
 			break;
 		case 421:
-			sc25();
+			s425();
 			break;
 		case 422:
-			sc26();
+			s426();
 			break;
 		case 423:
-			sc27();
+			s427();
 			break;
 		case 424:
-			sc28();
+			s428();
 			break;
 		case 425:
-			sc29();
+			s429();
 			break;
 		case 426:
-			sc30();
+			s430();
 			break;
 		case 427:
-			sc31();
+			s431();
 			break;
 		case 428:
-			sc32();
+			s432();
 			break;
 		case 429:
-			sc33();
+			s433();
 			break;
 		case 430:
-			sc34();
+			s434();
 			break;
 		case 431:
-			sc35();
+			s435();
 			break;
 		case 432:
-			sc36();
+			s436();
 			break;
 		case 433:
-			sc37();
+			s437();
 			break;
 		case 434:
-			sc38();
+			s438();
 			break;
-		case 43:
-			sc39();
+		case 435:
+			s439();
 			break;
 
 		}
@@ -374,23 +374,23 @@ public class Scenes {
 	}
 
 //RADIO PATH
-	public void s6() {
+	public void s406() {
 		background("Striaght road 2.png");
 		this.text = "Radio PATH";
 		this.mainPanelCommandsList = new int[] { 0 };
 		this.sceneCommandsList = new int[] { 18 };
 	}
 
-//BUS SHELTER PATH s10A
-	public void s7() {
+//BUS SHELTER PATH s5 to s10A
+	public void s407() {
 		background("Bus side of road.png");
 		this.text = "After a small look around, you find a mostly intact bus stop and decide the bench is the best bed you’ll get.\n";
 		this.mainPanelCommandsList = new int[] { 0, 19 };
 		this.sceneCommandsList = new int[] { 20 };
 	}
 
-//CONTINUE PATH AT SC 5
-	public void s8() {
+//CONTINUE PATH AT SC 5 to 15a
+	public void s408() {
 		background("Striaght road 2.png");
 		this.text = "You start to stumble from exhaustion. As you’re struggling to keep going, you fall to the ground unconscious.";
 		this.mainPanelCommandsList = new int[] { 0, 37 };
@@ -398,7 +398,7 @@ public class Scenes {
 	}
 
 //BUS PATH CONT
-	public void s9() {
+	public void s409() {
 
 		switch (Globals.stats.pathSc11aDecision) {
 		case 0:
@@ -431,7 +431,7 @@ public class Scenes {
 	}
 
 	// SC 11_1c
-	public void s10() {
+	public void s410() {
 		background("Busstop-2.png");
 		this.text = "You turn around and grab the radio while putting on your backpack to see if it still gets a signal and is still working, at this stage it is so you continue to follow it for a while.";
 
@@ -440,7 +440,7 @@ public class Scenes {
 	}
 
 	// SC12
-	public void s11() {
+	public void s411() {
 		background("Following signal.png");
 		this.text = " you look around and don’t see anyone, so you gather your thoughts and continue down the road as the souroundings become more bleak, your CB starts to make sound as if it is missing a signal.";
 
@@ -449,7 +449,7 @@ public class Scenes {
 	}
 
 // SC 11c
-	public void s12() {
+	public void s412() {
 		background("Busstop-1.png");
 		this.text = "You slowly reach for your backpack trying not to startle the dog to attack you, you get a hold of one of the shoulder straps and slowly start moving the backpack towards you, the movement of the backpack startles the dog, and you watch the dog run off out of sight.";
 
@@ -458,14 +458,14 @@ public class Scenes {
 	}
 
 //S11D
-	public void s13() {
+	public void s413() {
 		background("Busstop-1.png");
 		this.text = "You look around where you are to see what is within reach to throw at the dog, you see a large rock, you slowly grab the rock, you slowly raise your arm ready to throw the rock the dog notices you moving and starts to growl at you, in your attempt to launch the rock at the animal you miss the dog hit the bus shelter pole making a loud bang scaring both yourself and the dog, the dog runs away out of sight. The loud noise has startled someone you hear nearby they approach you. ";
 		this.mainPanelCommandsList = new int[] { 0, 27 };
 		this.sceneCommandsList = new int[] { 25, 27, 29, 30 };
 	}
 
-	public void s14() {
+	public void s414() {
 		background("Busstop-2.png");
 		this.text = "As you turn to face the sound a man approaches you, hands raised above his head to show he comes in peace \n"
 				+ "\n" + "Aproaching you, you notice him look at your backpack as you’ve put it back on. ";
@@ -474,7 +474,7 @@ public class Scenes {
 	}
 
 //sc 13A
-	public void sc15() {
+	public void s415() {
 		background("side quest house outside.png");
 		this.text = "You head off towards the building that the stranger pointed at in search of this book he is after, you arrive at the building he was talking about. looking at the building you see the door is locked and the windows have been boarded up. ";
 		this.mainPanelCommandsList = new int[] { 0, 29 };
@@ -482,7 +482,7 @@ public class Scenes {
 	}
 
 	// sc13B
-	public void sc16() {
+	public void s416() {
 		background("side quest house outside.png");
 		this.text = "You knock on the door multiple times; you hear someone unlocking the door from the other side. The door opens slowly, and you see a one eye looking at you. The door closes again, and you hear it lock again.";
 		this.mainPanelCommandsList = new int[] { 0, 30 };
@@ -491,7 +491,7 @@ public class Scenes {
 	}
 
 	// sc13c
-	public void sc17() {
+	public void s417() {
 		background("side quest house side.png");
 		this.text = "you look around the building for another way in, you spot a window on the second floor  ";
 		this.mainPanelCommandsList = new int[] { 0, 31 };
@@ -500,7 +500,7 @@ public class Scenes {
 	}
 
 //sc13d
-	public void sc18() {
+	public void s418() {
 		background("side quest house outside.png");
 		this.text = "After the door closes you try knocking again to no response you then start to look around the building for another way in ";
 		this.mainPanelCommandsList = new int[] { 0 };
@@ -508,7 +508,7 @@ public class Scenes {
 	}
 
 //sc13e
-	public void sc19() {
+	public void s419() {
 		background("Getting in window side quest.png");
 		this.text = "After looking for a way to get up to the second floor you notice some rubble that looks like you can climb on it to get though the open window. ";
 		this.mainPanelCommandsList = new int[] { 0 };
@@ -516,7 +516,7 @@ public class Scenes {
 	}
 
 	// sc11_1B from 13c or 13g
-	public void sc20() {
+	public void s420() {
 		background("Busstop-2.png");
 		this.text = "As of walking back up to the bus stop the stranger is nowhere in sight now, checking your cb seems to be the only reasonable option";
 		this.mainPanelCommandsList = new int[] { 0, 31 };
@@ -525,7 +525,7 @@ public class Scenes {
 	}
 
 	// sc13 f
-	public void sc21() {
+	public void s421() {
 		background("side quest house inside.png");
 		this.text = "You have made it through the window, but you have not been unnoticed, the person who closed the door on you have come to meet you he is holding a bat, he demands you leave. ";
 		this.mainPanelCommandsList = new int[] { 0 };
@@ -534,7 +534,7 @@ public class Scenes {
 	}
 
 	// minigame c
-	public void sc22() {
+	public void s422() {
 		// couldnt get this background to work?? so placeholdered Intro image
 		background("Intro.png");
 		this.text = "MINIGAME.";
@@ -544,7 +544,7 @@ public class Scenes {
 	}
 
 //SC13G
-	public void sc23() {
+	public void s423() {
 		background("returning to bus stop.png");
 		this.text = "you see the man and fell you will lose this fight and leave via the window you come in through and hand back to the stranger to tell him you are unable to complete his task. Disappointed in this outcome the man attacks you, you defend just in time [-10 health] he runs away after hitting you.";
 		this.mainPanelCommandsList = new int[] { 0, 32 };
@@ -553,7 +553,7 @@ public class Scenes {
 	}
 
 	// WIN FROM MINI GAME sc14c
-	public void sc24() {
+	public void s424() {
 		background("side quest house inside.png");
 		this.text = "You have won the fight, the agressive man has fallen and is laying on the floor. Now you must look for the book";
 
@@ -562,7 +562,7 @@ public class Scenes {
 	}
 
 	// LOSE FROM MINIGAME sc14B
-	public void sc25() {
+	public void s425() {
 		background("side quest house inside.png");
 		this.text = "You have lost, the man has left the room, you are bleeding you crawl to a wall to lean against. DO you have anything in your backpack that may help? Perhaps you can bandage up and then find that book!";
 		this.mainPanelCommandsList = new int[] { 0, 35, 36 };
@@ -571,7 +571,7 @@ public class Scenes {
 	}
 
 	// S14D
-	public void sc26() {
+	public void s426() {
 		background("side quest house inside.png");
 		this.text = "You see the book you are looking for resting on a book shelf, you pick yourself up and look around the room for anything else  ";
 		this.mainPanelCommandsList = new int[] { 0, };
@@ -579,7 +579,7 @@ public class Scenes {
 	}
 
 //S14E
-	public void sc27() {
+	public void s427() {
 		background("Busstop-2.png");
 		this.text = "After climbing back out though the window carefully, you make your way back to where the stranger was, you hand him the book.";
 		this.mainPanelCommandsList = new int[] { 0 };
@@ -587,7 +587,7 @@ public class Scenes {
 	}
 
 //S14F
-	public void sc28() {
+	public void s428() {
 		background("Busstop-2.png");
 		this.text = "Ther stranger show you his gratiude for doing this task for him, in return he tells you of the loction of paradise city and point you in the right direction";
 		this.mainPanelCommandsList = new int[] { 0, 34 };
@@ -595,7 +595,7 @@ public class Scenes {
 	}
 
 	// S8_1C
-	public void sc29() {
+	public void s429() {
 		background("brick Wall door.png");
 		this.text = "TOM TO PATRYK SECTION";
 		this.mainPanelCommandsList = new int[] {};
@@ -603,7 +603,7 @@ public class Scenes {
 	}
 
 	// sc D2
-	public void sc30() {
+	public void s430() {
 		background("side quest death.png");
 		this.text = "You have not been able to banadge your wounds and have been left for a slow death as atempting to escape only exascabated your bleeding. ";
 		this.mainPanelCommandsList = new int[] { 36 };
@@ -611,7 +611,7 @@ public class Scenes {
 	}
 
 //15b
-	public void sc31() {
+	public void s431() {
 		background("Striaght road 2.png");
 		this.text = "As you regain consciousness you notice that you have grazed your hand and your forehand has a cut that is slowly bleeding because of falling, you also notice your backpack has been opened and you have lost some of your belongings from your backpack. You look around and see if there is any body around you. ";
 
@@ -620,7 +620,7 @@ public class Scenes {
 	}
 
 //Bandages 15d
-	public void sc32() {
+	public void s432() {
 		background("Striaght road 2.png");
 		this.text = "You reach into your backpack finding less items in there than before. After finding your bandages you fix yourself up to stop the bleeding. You get up and soldier on.";
 
@@ -631,7 +631,7 @@ public class Scenes {
 	// Sc15D_1 = no bandages link to s10A ( Ive added this change as seemed no
 	// consequence or affect for)
 	// having no bandages
-	public void sc33() {
+	public void s433() {
 		background("Striaght road 2.png");
 		this.text = "You have no bandages. You think you should find shelter and rest up.";
 
@@ -640,7 +640,7 @@ public class Scenes {
 	}
 
 	// check backpack rout s15e
-	public void sc34() {
+	public void s434() {
 		background("Side of road (item search).png");
 		this.text = "You open you backpack and look though what has gone missing you find your CB radio is the only thing missing, you do not believe your wound is bleeding that much and continue along your way.";
 
@@ -649,7 +649,7 @@ public class Scenes {
 	}
 
 	// s15C
-	public void sc35() {
+	public void s435() {
 		background("Side of road (item search).png");
 		this.text = "You stand up and brush yourself off and without looking in you backpack you start to look around the aera you fell in to see if you can notice any of your belongings laying on the ground, you do not notice anything, you continue along your way";
 
@@ -658,7 +658,7 @@ public class Scenes {
 	}
 
 	// s15f
-	public void sc36() {
+	public void s436() {
 		background("Turn back.png");
 		this.text = "You have continued down the road for a few kilometers more feeling you have lost your way you reach into your backpack for your CB, it is not there. ";
 
@@ -667,7 +667,7 @@ public class Scenes {
 	}
 
 	// D0
-	public void sc37() {
+	public void s437() {
 		background("Death.png");
 		this.text = "As you continue down the road looking around for a source of sustenance, you cannot seem to find any as you keep going feeling like you should have turned back but it is too late to turn around, as the day turns to night, find yourself crawling to a building that is falling apart to try sleep in, you close your eyes one last time. . ";
 
@@ -676,7 +676,7 @@ public class Scenes {
 	}
 
 	// s15G
-	public void sc38() {
+	public void s438() {
 		background("striaght road 2.png");
 		this.text = "As you have made it back to a place that seems more failmer you see a shelter you could stay in for the night, as you approch the shelter you see your radio on the ground ";
 
@@ -684,7 +684,7 @@ public class Scenes {
 		this.sceneCommandsList = new int[] {16, 57};
 	}
 	//s10B
-	public void sc39() {
+	public void s439() {
 		background("Bus side of road 1.png");
 		this.text = "After making your way to the bus shelter you place your bag down and get comfortable for the night";
 		this.mainPanelCommandsList = new int[] { 0 };
