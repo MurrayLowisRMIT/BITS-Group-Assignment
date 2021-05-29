@@ -58,4 +58,18 @@ public class Globals
       // redraws scene
       ((JPanel) Globals.content).repaint();
    }
+
+   // resets game parameters for new game
+   public static void newGame()
+   {
+      Globals.stats.staticSceneID = -1;
+      Globals.stats.radio = 0;
+      Globals.stats.comicBook = 0;
+      Globals.stats.bandages = 0;
+      Globals.stats.comicBookDecision = 0;
+      Globals.stats.dogDecision = 0;
+      Globals.stats.radioDecision = 0;
+      Globals.stats.doorDecision = 0;
+      Globals.stats.minigameA = false;
+   }
 }

@@ -45,6 +45,9 @@ public class MainPanelCommands extends Commands
    {
       switch (this.globalID)
       {
+         case -1:
+            mc_1(); // play again
+            break;
          case 0:
             mc0();
             break;
@@ -83,6 +86,9 @@ public class MainPanelCommands extends Commands
             break;
          case 12:
             mc12();
+            break;
+         case 100:
+            mc100(); //go to death scene
             break;
          case 200:
             mc13();
@@ -134,6 +140,22 @@ public class MainPanelCommands extends Commands
 
    // BUTTON CONTENT BEGINS HERE-----------------------------------------------
    // -------------------------------------------------------------------------
+
+   // restart game
+   public void mc_1()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Game over";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.newGame();
+      }
+   }
 
    // open/close inventory
    public void mc0()
@@ -442,6 +464,22 @@ public class MainPanelCommands extends Commands
     	  Globals.stats.staticSceneID = 202;
       }
    }
+
+   // S8_1B sent away
+   public void mc100()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Attempt to kick down door";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = -1; // set to death scene from Tom's !!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      }
+   }
    
    // scene 6_1/7 - go to scene 8 id 205
    public void mc18()
@@ -589,13 +627,13 @@ public class MainPanelCommands extends Commands
       else
       // action --------------------------------------
       {
-    	  if (Globals.stats.book == 1)
-    	  Globals.stats.staticSceneID = 209;
-    	  else
-    	  Globals.stats.staticSceneID = 207;
+         if (Globals.stats.comicBook == 1)
+            Globals.stats.staticSceneID = 209;
+         else
+            Globals.stats.staticSceneID = 207;
       }
    }
-   
+
    public void mc27() // id 214
    {
       if (action == false)
@@ -607,10 +645,10 @@ public class MainPanelCommands extends Commands
       else
       // action --------------------------------------
       {
-    	  if (Globals.stats.book == 1)
-        	  Globals.stats.staticSceneID = 207;
-        	  else
-        	  Globals.stats.staticSceneID = 209;
+         if (Globals.stats.comicBook == 1)
+            Globals.stats.staticSceneID = 207;
+         else
+            Globals.stats.staticSceneID = 209;
       }
    }
 }

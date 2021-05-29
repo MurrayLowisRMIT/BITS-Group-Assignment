@@ -10,7 +10,6 @@ public class Stats
    protected int radio = 0;
    protected int comicBook = 0;
    protected int bandages = 0;
-   protected int book = 1;
 
    // increase this number if more items are coded into the game
    protected int[] inventory = new int[20];
@@ -22,7 +21,6 @@ public class Stats
       this.inventory[0] = radio;
       this.inventory[1] = comicBook;
       this.inventory[2] = bandages;
-      this.inventory[3] = book;
    }
 
    // BOOLEANS AND OTHER FLAGS-------------------------------------------------
@@ -31,7 +29,8 @@ public class Stats
    protected boolean sceneOverlayActive = true;
    protected boolean inventoryOverlayActive = false;
    // the ID number of the current scene (change number to debug a scene)
-   protected int staticSceneID = 204;
+   // -1 for main menu
+   protected int staticSceneID = -1;
    // general purpose reusable confirmation (please reset to false when done)
    protected boolean check = false;
 
@@ -45,6 +44,8 @@ public class Stats
    protected int doorDecision = 0;
    // false = start state or failed minigame, true = minigame success
    protected boolean minigameA = false;
+   // game completed?
+   protected boolean gameComplete = false;
    // the art pack chosen
    protected String artPack = "Final";
 }

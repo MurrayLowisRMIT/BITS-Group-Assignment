@@ -334,7 +334,7 @@ public class SceneCommands extends Commands
       // action --------------------------------------
       {
          Globals.stats.comicBookDecision = 1;
-         Globals.stats.comicBook++;
+         Globals.stats.comicBook = 1;
       }
    }
 
@@ -444,7 +444,7 @@ public class SceneCommands extends Commands
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = 10;
+         Globals.stats.staticSceneID = 10; // change to match Tom's!!!!!!!!!!!!
       }
    }
 
@@ -458,7 +458,7 @@ public class SceneCommands extends Commands
                                250,
                                200,
                                50);
-         this.text = "Continue to walk";
+         this.text = "Continue to walk"; // change to match Tom's!!!!!!!!!!!!!!
       }
       else
       // action --------------------------------------

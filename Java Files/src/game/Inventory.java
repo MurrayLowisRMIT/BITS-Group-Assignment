@@ -99,17 +99,15 @@ public class Inventory extends Commands
             icon("Radio.png");
             add();
          }
-         else
-         {
-            if (Globals.stats.staticSceneID == 5)
-            {
-               Globals.stats.staticSceneID = 6;
-            }
-         }
       }
       else
       // action --------------------------------------
       {
+         if (Globals.stats.staticSceneID == 5)
+         {
+            Globals.stats.staticSceneID = 200;
+            Globals.stats.inventoryOverlayActive = false;
+         }
 
       }
    }
