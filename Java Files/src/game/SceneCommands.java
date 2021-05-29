@@ -103,15 +103,54 @@ public class SceneCommands extends Commands
          case 17:
             sc17();
             break;
-         case 18:
+         case 200:
             sc18();
             break;
-         case 19:
+         case 201:
             sc19();
             break;
-         case 20:
+         case 202:
             sc20();
             break;
+         case 203:
+             sc21();
+             break;
+         case 204:
+             sc22();
+             break;
+         case 205:
+             sc23();
+             break;
+         case 206:
+             sc24();
+             break;
+         case 207:
+             sc25();
+             break;
+         case 208:
+             sc26();
+             break;
+         case 209:
+             sc27();
+             break;
+         case 210:
+             sc28();
+             break;
+         case 211:
+             sc29();
+             break;
+         case 212:
+             sc30();
+             break;
+         case 213:
+             sc31();
+             break;
+         case 214:
+             sc32();
+             break;
+         case 215:
+             sc33();
+             break;
       }
    }
 
@@ -428,18 +467,180 @@ public class SceneCommands extends Commands
       }
    }
 
-   public void sc18()
+   public void sc18() //200
    {
-
+	   overlayImage("hand holding broken radio .png");
+	      this.button.setBounds(350,
+	                            Globals.windowHeight - Globals.mainPanelHeight - 350,
+	                            446,
+	                            450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
    }
 
-   public void sc19()
+   public void sc19() //201
    {
-
+	   overlayImage("hand holding broken radio use(antena).png");
+	      this.button.setBounds(350,
+                  Globals.windowHeight - Globals.mainPanelHeight - 350,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null); 
    }
 
-   public void sc20()
+   public void sc20() //202
    {
-
+	   overlayImage("hand holding broken radio  use(signal 1).png");
+	      this.button.setBounds(350,
+                  Globals.windowHeight - Globals.mainPanelHeight - 350,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
    }
+   
+   public void sc21() //203
+   {
+	   overlayImage("hand holding broken radio  use(signal 2).png");
+	      this.button.setBounds(350,
+                  Globals.windowHeight - Globals.mainPanelHeight - 350,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc22() //204
+   {
+	   overlayImage("hand holding broken radio .png");
+	      this.button.setBounds(220,
+	                            Globals.windowHeight - Globals.mainPanelHeight - 350,
+	                            446,
+	                            450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc23() //205
+   {
+	   overlayImage("tape in hand.png");
+	      this.button.setBounds(650,
+	                            Globals.windowHeight - Globals.mainPanelHeight - 350,
+	                            446,
+	                            450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc24() //206
+   {
+	   overlayImage("hand holding broken radio use(antena).png");
+	      this.button.setBounds(350,
+                  Globals.windowHeight - Globals.mainPanelHeight - 350,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc25() //207
+   {
+	   overlayImage("hand holding broken radio use (screen).png");
+	      this.button.setBounds(350,
+                  Globals.windowHeight - Globals.mainPanelHeight - 350,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc26() //208
+   {
+	   overlayImage("Door to kick.png");
+	      this.button.setBounds(375,
+                  Globals.windowHeight - Globals.mainPanelHeight - 400,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc27() //209
+   {
+	   overlayImage("hand reaching for water.png");
+	      this.button.setBounds(650,
+                  Globals.windowHeight - Globals.mainPanelHeight - 350,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc28() //210
+   {
+	   overlayImage("Footsetps left.png");
+	      this.button.setBounds(1,
+                  Globals.windowHeight - Globals.mainPanelHeight - 270,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc29() //211
+   {
+	   overlayImage("Footsetps right.png");
+	      this.button.setBounds(800,
+                  Globals.windowHeight - Globals.mainPanelHeight - 270,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc30() //212
+   {
+	   overlayImage("wall guy talk.png");
+	      this.button.setBounds(344,
+                  Globals.windowHeight - Globals.mainPanelHeight - 631,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc31() //213
+   {
+	   overlayImage("wall guy shoot.png");
+	      this.button.setBounds(355,
+                  Globals.windowHeight - Globals.mainPanelHeight - 631,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc32() //214
+   {
+	   overlayImage("wall guy minigame.png");
+	      this.button.setBounds(375,
+                  Globals.windowHeight - Globals.mainPanelHeight - 400,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
+   public void sc33() //215
+   {
+	   overlayImage("footsteps back (thown out).png");
+	      this.button.setBounds(740,
+                  Globals.windowHeight - Globals.mainPanelHeight - 350,
+                  446,
+                  450);
+	      this.button.setEnabled(true);
+	      this.button.setCursor(null);
+   }
+   
 }
