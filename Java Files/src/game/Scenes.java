@@ -69,10 +69,14 @@ public class Scenes
          case 4:
             s4();
             break;
+         case 104:
+            s4_1();
+            break;
          case 5:
             s5();
             break;
          case 6:
+<<<<<<< Updated upstream
             s5();
             break;
          case 200:
@@ -112,6 +116,19 @@ public class Scenes
             s4_1();
             break;
 
+=======
+            s6();
+            break;
+         case 7:
+            s7();
+            break;
+         case 8:
+            s8();
+            break;
+         case 9:
+            s9();
+            break;
+>>>>>>> Stashed changes
       }
       // create new overlay with scene contents
       createCommands(this.mainPanelCommandsList, this.sceneCommandsList);
@@ -486,5 +503,14 @@ public class Scenes
 	   this.mainPanelCommandsList = new int[] {  };
 	   this.sceneCommandsList = new int[] {  };
    }
+<<<<<<< Updated upstream
    
 }
+=======
+
+   public void s10()
+   {
+
+   }
+}
+>>>>>>> Stashed changes
