@@ -21,7 +21,7 @@ public class Scenes
    private void createCommands(int[] mainPanelCommandsList, int[] sceneCommandsList)
    {
       // update current button list for main panel
-      Globals.mainPanelCommands = new JButton[mainPanelCommandsList.length];
+      Globals.mainPanelCommands = new JButton[mainPanelCommandsList.length]; 
       this.mainPanelCommands = new MainPanelCommands[mainPanelCommandsList.length];
       for (int i = 0; i < mainPanelCommandsList.length; i++)
       {
@@ -75,21 +75,43 @@ public class Scenes
          case 6:
             s5();
             break;
-         case 7:
+         case 200:
             s6();
             break;
-         case 8:
+         case 201:
+            s6_1();
+            break;
+         case 202:
             s7();
             break;
-         case 9:
+         case 203:
             s8();
             break;
+         case 204:
+            s8_1();
+            break;
+         case 205:
+            d1();
+            break; 
          case 10:
             s9();
             break;
+         case 206:
+        	 minigameB();
+        	 break;
+         case 207:
+             s9();
+             break;
+         case 208:
+             s12_1();
+             break;
+         case 209:
+             w0();
+             break;
          case 104:
             s4_1();
             break;
+
       }
       // create new overlay with scene contents
       createCommands(this.mainPanelCommandsList, this.sceneCommandsList);
@@ -283,23 +305,186 @@ public class Scenes
       this.sceneCommandsList = new int[] { 16, 17 };
    }
 
-   public void s6()
+   public void s6() //id 200
    {
-
+	   background("Striaght road 2.png");
+	      switch (Globals.stats.radioDecision)
+	      {
+	         case 0:
+	            this.text = "You reach to check your CB radio as you grab your " +
+	            			"CB radio you notice the aerial is broken, as you " +
+	            			"look at it you notice the screen is cracked.";
+	            this.mainPanelCommandsList = new int[] { 0, 200, 201, 202 };
+	            this.sceneCommandsList = new int[] { 200 };
+	            break;
+	         case 1:
+	            this.text = "You reach into your backpack to find some " + 
+	            			"tape to try make the aerial stay connected.";
+	            this.mainPanelCommandsList = new int[] { 203 };
+	            this.sceneCommandsList = new int[] { 204, 205 };
+	            break;
+	         case 2:
+	            this.text = "You try to tape around the screen and " + 
+	            			"stop the screen falling out.";
+	            this.mainPanelCommandsList = new int[] { 203 };
+	            this.sceneCommandsList = new int[] { 204, 205 };
+	            break;
+	         case 3:
+	            this.text = "You grab the radio to see if it still " + 
+	            			"gets a signal and is still working, at " + 
+	            			"this stage it is";
+	            this.mainPanelCommandsList = new int[] { 204 };
+	            this.sceneCommandsList = new int[] { 202 };
+	            break;
+	      }
+   }
+   
+   public void s6_1() //id 201
+   {	
+	   background("Striaght road 2.png");
+	   if (Globals.stats.radioDecision == 1)
+	   {
+		   this.text = "Your attempt to fix the aerial in turn the " + 
+				   	   "aerial has broken off and the CB is just " + 
+				   	   "picking up static now. Worried you might " + 
+				   	   "miss something you continue the head you were on before. ";
+	       this.mainPanelCommandsList = new int[] { 204 };
+	       this.sceneCommandsList = new int[] { 206 }; 
+	   }
+	   else if (Globals.stats.radioDecision == 2)
+	   {
+		   this.text = "Your attempt to fix the screen in turn " + 
+				   	   "screen has stayed in the CB radio but the " + 
+				   	   "CB radio will not turn on now. You continue " + 
+				   	   "the path you were last on.";
+	       this.mainPanelCommandsList = new int[] { 204 };
+	       this.sceneCommandsList = new int[] { 207 };  
+	   }
+	   else if (Globals.stats.radioDecision == 3)
+	   {
+		   this.text = "You grab the radio to see if it still " + 
+       			"gets a signal and is still working, at " + 
+       			"this stage it is";
+	       this.mainPanelCommandsList = new int[] { 205 };
+	       this.sceneCommandsList = new int[] { 203 };  
+	   }
+   }
+   
+   public void s7() // id 202
+   {	
+	   background("wall in distance.png");
+		   if (Globals.stats.radioDecision == 3 || Globals.stats.minigameA == true ) {
+			   this.text = "You grab the CB and check if it is still " + 
+	    			   "working at this stage and follow on walking for a while, " + 
+	    			   "with the CB still working you check the signal and the " + 
+	    			   "signal is getting stronger as the surroundings become " + 
+	    			   "more bleak but you notice what seems to be buildings in the distance.";
+	    		       this.mainPanelCommandsList = new int[] { 0, 205, 206 };
+	    		       this.sceneCommandsList = new int[] { 203 };
+		   }
+	       else {
+	    	   this.text = "Following the road, you notice what " + 
+				    	"seems to be a structure in the distance.";
+	       this.mainPanelCommandsList = new int[] { 205 };
+	       this.sceneCommandsList = new int[] {  }; 
+	       }
+	    	   
    }
 
-   public void s7()
+   public void s8() // id 203
    {
-
+	   background("brick Wall(no door).png");
+	   this.text = "As you approach the structure you notice " + 
+				   "that it goes beyond the horizon in both directions. " + 
+				   "You notice footsteps in either direction, which do you follow? ";
+       this.mainPanelCommandsList = new int[] { 0, 206, 208 };
+       this.sceneCommandsList = new int[] { 210, 211 };
    }
-
-   public void s8()
+   
+   public void s8_1() // id 204
    {
-
+	   background("brick Wall door.png");
+       switch (Globals.stats.doorDecision) {
+       		case 0: 
+       			if (Globals.stats.book == 0) {
+       			   this.text = "You continute to follow the wall until you " + 
+       						   "come across a door. There doesn't seem to be anyone around...";
+       			   }
+       			   else {
+       				   this.text = "You follow the directions that the stranger gave you and " +
+       				   		"you come to a large concrete wall with a door in it. There doesn't " +
+       				   		"seem to be anyone around...";
+       			   }
+       			this.mainPanelCommandsList = new int[] { 0, 209, 210 };
+       			this.sceneCommandsList = new int[] { 208 };
+       			break;
+       		case 1: 
+       			this.text = "You call out from outside the wall and you see someone stick their head over the wall...";
+   			this.mainPanelCommandsList = new int[] { 0, 212 }; 
+   			this.sceneCommandsList = new int[] { 208, 212 };
+   			break;
+       		case 2:
+       			this.text = "You attempt to break in, and as you do, a figure appears at the top of the wall. He points his gun at you..." + 
+       		"\"You best get going stranger, before I blow your head off\" You back away slowly, returning to the desert...";
+   			this.mainPanelCommandsList = new int[] { 0, }; //d0 command };
+   			this.sceneCommandsList = new int[] { 208, 213 };
+   			break;
+       }
    }
-
-   public void s9()
+   
+   public void d1() //id 205
    {
-
+	   background("death at wall.png");
+	   this.text = "After following the wall hoping for a way in " + 
+				   "you find yourself too exhausted to go on.  " + 
+				   "You die from dehydration.";
+       this.mainPanelCommandsList = new int[] {  };
+       this.sceneCommandsList = new int[] { 209 }; 
    }
+   
+   public void minigameB() // id 206
+   {
+	   background("brick Wall door.png");
+	   this.text = "The man approaches you, and asks \"Do you have anything of value? Any books?\"";
+	   this.mainPanelCommandsList = new int[] { 213, 214 };
+	   this.sceneCommandsList = new int[] { 214, 208 };
+	   
+   }
+   
+   public void s9() // id 207
+   {
+	   background("Thrown out.png");
+	   this.text = "You are found to be lying, you have been barred from entering Paradise city. You follow the wall hoping to find another way in...";
+	   this.mainPanelCommandsList = new int[] { 211 };
+	   this.sceneCommandsList = new int[] { 215 };
+   }
+   
+   public void s12_1() // id 208
+   {
+	   background("Following signal.png");
+	   if (Globals.stats.minigameA == true) {
+		   this.text = "Your CB radio is still damaged but now functions.";
+       this.mainPanelCommandsList = new int[] { 0, 204 };
+       this.sceneCommandsList = new int[] {  };
+	   }
+	   else {
+		   this.text = "Your CB radio is now broken with the screen now permanently black...";
+       this.mainPanelCommandsList = new int[] { 0, 204 };
+       this.sceneCommandsList = new int[] {  };
+	   }
+   }
+   
+   public void w0() //id 209
+   {
+	   background("safe haven.png");
+	   if (Globals.stats.book == 1) {
+	   this.text = "You are deemed trustworthy and the book is valuable, you are allowed to enter Paradise City. Congratulations, you have made it to safety!";
+	   }
+	   else {
+	   this.text = "You are deemed trustworthy, you are allowed to enter Paradise City. Congratulations, you have made it to safety!";
+	   }
+	   this.mainPanelCommandsList = new int[] {  };
+	   this.sceneCommandsList = new int[] {  };
+   }
+   
 }
