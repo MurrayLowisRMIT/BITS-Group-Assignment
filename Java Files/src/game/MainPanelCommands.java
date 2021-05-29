@@ -88,7 +88,7 @@ public class MainPanelCommands extends Commands
             mc12();
             break;
          case 100:
-            mc100(); //go to death scene
+            mc100(); // go to death scene
             break;
          case 200:
             mc13();
@@ -115,26 +115,29 @@ public class MainPanelCommands extends Commands
             mc20();
             break;
          case 208:
-             mc21();
-             break;
+            mc21();
+            break;
          case 209:
-             mc22();
-             break;
+            mc22();
+            break;
          case 210:
-             mc23();
-             break;
+            mc23();
+            break;
          case 211:
-             mc24();
-             break;
+            mc24();
+            break;
          case 212:
-             mc25();
-             break;
+            mc25();
+            break;
          case 213:
-             mc26();
-             break;
+            mc26();
+            break;
          case 214:
-             mc27();
-             break;
+            mc27();
+            break;
+         case 36:
+            mc36();
+            break;
       }
    }
 
@@ -378,90 +381,95 @@ public class MainPanelCommands extends Commands
       }
    }
 
-// scene 6_1 repair aerial id 200
+   // scene 6_1 repair aerial id 200
    public void mc13()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-          this.button.setBounds(500, 0, 120, 50);
-          this.text = "Try to repair the aerial";
+         this.button.setBounds(500, 0, 120, 50);
+         this.text = "Try to repair the aerial";
       }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.radioDecision = 1;
+         Globals.stats.radioDecision = 1;
       }
    }
+
    // scene 6_1 check cb id 201
    public void mc14()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-          this.button.setBounds(300, 0, 120, 50);
-          this.text = "See if the CB radio is working";  
+         this.button.setBounds(300, 0, 120, 50);
+         this.text = "See if the CB radio is working";
       }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.radioDecision = 3;
+         Globals.stats.radioDecision = 3;
       }
    }
+
    // scene 6_1 try fix screen id 202
    public void mc15()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-          this.button.setBounds(100, 0, 120, 50);
-          this.text = "Try to repair the screen";
+         this.button.setBounds(100, 0, 120, 50);
+         this.text = "Try to repair the screen";
       }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.radioDecision = 2;
+         Globals.stats.radioDecision = 2;
       }
    }
-   
+
    // scene 6 - go to scene 6_1 id 203
    public void mc16()
    {
-	   if (action == false)
-		      // draw ----------------------------------------
-		      {
-		         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-		         this.text = "Continue";
-		      }
-		      else
-		      // action --------------------------------------
-		      {
-		         Globals.stats.staticSceneID = 201;
-		      }
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Continue";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 201;
+      }
    }
-   
+
    // scene 6_1/12_1 - go to scene 7 id 204
    public void mc17()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-	      if (Globals.stats.minigameA == false) {   
-	    	  this.text = "Follow the road";
-	      }
-	      else if (Globals.stats.minigameA == true) {
-	    		 this.button.setBounds(Globals.mainPanelWidth / 2 - 100, 0, 120, 50);
-		         this.text = "Follow CB"; 
-	    	  }
-	      else {
-    	  	this.text = "Continue";
-	      }
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         if (Globals.stats.minigameA == false)
+         {
+            this.text = "Follow the road";
+         }
+         else if (Globals.stats.minigameA == true)
+         {
+            this.button.setBounds(Globals.mainPanelWidth / 2 - 100, 0, 120, 50);
+            this.text = "Follow CB";
+         }
+         else
+         {
+            this.text = "Continue";
+         }
       }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.staticSceneID = 202;
+         Globals.stats.staticSceneID = 202;
       }
    }
 
@@ -477,51 +485,56 @@ public class MainPanelCommands extends Commands
       else
       // action --------------------------------------
       {
-         Globals.stats.staticSceneID = -1; // set to death scene from Tom's !!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+         Globals.stats.staticSceneID = -1; // set to death scene from Tom's !!!
+                                           // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       }
    }
-   
+
    // scene 6_1/7 - go to scene 8 id 205
    public void mc18()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-    	  if (Globals.stats.radioDecision == 3 || Globals.stats.minigameA == true) {
-    		 this.button.setBounds(Globals.mainPanelWidth / 2 - 1, 0, 120, 50);
-	         this.text = "Follow Road"; 
-    	  }
-    	  else {
-    		  this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-    		  this.text = "Continue";
-    	  }
+         if (Globals.stats.radioDecision == 3 || Globals.stats.minigameA == true)
+         {
+            this.button.setBounds(Globals.mainPanelWidth / 2 - 1, 0, 120, 50);
+            this.text = "Follow Road";
+         }
+         else
+         {
+            this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+            this.text = "Continue";
+         }
       }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.staticSceneID = 203;
+         Globals.stats.staticSceneID = 203;
       }
    }
-   
+
    // scene 7 - go to scene 9 id 206
    public void mc19()
    {
       if (action == false)
       // draw ----------------------------------------
       {
-    	  if (Globals.stats.radioDecision == 3 || Globals.stats.minigameA == true) {
-      		 this.button.setBounds(Globals.mainPanelWidth / 2 - 200, 0, 120, 50);
-  	         this.text = "Follow CB"; 
-      	  }
-      	  else {
-      		  this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-      		  this.text = "Right";
-      	  }
-       }
+         if (Globals.stats.radioDecision == 3 || Globals.stats.minigameA == true)
+         {
+            this.button.setBounds(Globals.mainPanelWidth / 2 - 200, 0, 120, 50);
+            this.text = "Follow CB";
+         }
+         else
+         {
+            this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+            this.text = "Right";
+         }
+      }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.staticSceneID = 204;
+         Globals.stats.staticSceneID = 204;
       }
    }
 
@@ -531,13 +544,13 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-	         this.text = "Follow Road";
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Follow Road";
       }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.staticSceneID = 203;
+         Globals.stats.staticSceneID = 203;
       }
    }
 
@@ -546,13 +559,13 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 200, 0, 120, 50);
-	         this.text = "Left";
-      }  
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 200, 0, 120, 50);
+         this.text = "Left";
+      }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.staticSceneID = 205;
+         Globals.stats.staticSceneID = 205;
       }
    }
 
@@ -561,69 +574,69 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 200, 0, 120, 50);
-	         this.text = "Call out";
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 200, 0, 120, 50);
+         this.text = "Call out";
       }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.doorDecision = 1;
+         Globals.stats.doorDecision = 1;
       }
    }
-   
+
    public void mc23() // id 210
    {
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-	         this.text = "Break in";
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Break in";
       }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.doorDecision = 2;
+         Globals.stats.doorDecision = 2;
       }
    }
-   
+
    public void mc24() // id 211
    {
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 100, 0, 120, 50);
-	         this.text = "Follow the wall";
-      }  
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 100, 0, 120, 50);
+         this.text = "Follow the wall";
+      }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.staticSceneID = 205;
+         Globals.stats.staticSceneID = 205;
       }
    }
-   
+
    public void mc25() // id 212
    {
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 100, 0, 120, 50);
-	         this.text = "Introduce yourself";
-      }  
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 100, 0, 120, 50);
+         this.text = "Introduce yourself";
+      }
       else
       // action --------------------------------------
       {
-    	  Globals.stats.staticSceneID = 206;
+         Globals.stats.staticSceneID = 206;
       }
    }
-   
+
    public void mc26() // id 213
    {
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 200, 0, 120, 50);
-	         this.text = "Yes";
-      }  
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 200, 0, 120, 50);
+         this.text = "Yes";
+      }
       else
       // action --------------------------------------
       {
@@ -639,9 +652,9 @@ public class MainPanelCommands extends Commands
       if (action == false)
       // draw ----------------------------------------
       {
-    	  this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
-	         this.text = "No";
-      }  
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "No";
+      }
       else
       // action --------------------------------------
       {
@@ -649,6 +662,21 @@ public class MainPanelCommands extends Commands
             Globals.stats.staticSceneID = 207;
          else
             Globals.stats.staticSceneID = 209;
+      }
+   }
+
+   public void mc36()
+   {
+      if (action == false)
+      // draw ----------------------------------------
+      {
+         this.button.setBounds(Globals.mainPanelWidth / 2 - 60, 0, 120, 50);
+         this.text = "Slowly back away";
+      }
+      else
+      // action --------------------------------------
+      {
+         Globals.stats.staticSceneID = 37;
       }
    }
 }

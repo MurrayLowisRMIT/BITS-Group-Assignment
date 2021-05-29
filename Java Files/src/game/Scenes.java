@@ -108,6 +108,9 @@ public class Scenes
          case 209:
             w0();
             break;
+         case 37:
+            sc37();
+            break;
       }
       // create new overlay with scene contents
       createCommands(this.mainPanelCommandsList, this.sceneCommandsList);
@@ -437,7 +440,7 @@ public class Scenes
             this.text =
                      "You attempt to break in, and as you do, a figure appears at the top of the wall. He points his gun at you..." +
                         "\"You best get going stranger, before I blow your head off\" You back away slowly, returning to the desert...";
-            this.mainPanelCommandsList = new int[] { 0, }; // d0 command };
+            this.mainPanelCommandsList = new int[] { 0, 36 };
             this.sceneCommandsList = new int[] { 208, 213 };
             break;
       }
@@ -503,13 +506,19 @@ public class Scenes
          this.text =
                   "You are deemed trustworthy, you are allowed to enter Paradise City. Congratulations, you have made it to safety!";
       }
-      this.mainPanelCommandsList = new int[] { -1};
+      this.mainPanelCommandsList = new int[] { -1 };
       this.sceneCommandsList = new int[] {};
       Globals.stats.gameComplete = true;
    }
 
-   public void s10()
+   // Death 0
+   public void sc37()
    {
+      background("Death.png");
+      this.text =
+               "As you continue down the road looking around for a source of sustenance, you cannot seem to find any as you keep going feeling like you should have turned back but it is too late to turn around, as the day turns to night, find yourself crawling to a building that is falling apart to try sleep in, you close your eyes one last time. . ";
 
+      this.mainPanelCommandsList = new int[] { 0, -1 };
+      this.sceneCommandsList = new int[] { 56 };
    }
 }
