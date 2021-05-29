@@ -44,8 +44,6 @@ public class Stats
    protected int doorDecision = 0;
    // false = start state or failed minigame, true = minigame success
    protected boolean minigameA = false;
-   // game completed?
-   protected boolean gameComplete = false;
    // the art pack chosen
    protected String artPack = "Final";
 }

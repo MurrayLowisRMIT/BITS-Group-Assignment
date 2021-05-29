@@ -21,6 +21,8 @@ public class Globals
    // the list of buttons in current scene
    public static JButton[] mainPanelCommands;
    public static JButton[] sceneCommands;
+   // has player completed the game before?
+   protected static boolean gameComplete = false;
 
    // game window resolution
    public static final int windowWidth = 1280;
@@ -59,17 +61,10 @@ public class Globals
       ((JPanel) Globals.content).repaint();
    }
 
-   // resets game parameters for new game
+   // end game and return to main menu
    public static void newGame()
    {
+      stats = new Stats();
       Globals.stats.staticSceneID = -1;
-      Globals.stats.radio = 0;
-      Globals.stats.comicBook = 0;
-      Globals.stats.bandages = 0;
-      Globals.stats.comicBookDecision = 0;
-      Globals.stats.dogDecision = 0;
-      Globals.stats.radioDecision = 0;
-      Globals.stats.doorDecision = 0;
-      Globals.stats.minigameA = false;
    }
 }

@@ -138,7 +138,7 @@ public class Scenes
    {
       background("Title Screen.png");
       this.mainPanelCommandsList = new int[] {};
-      if (Globals.stats.gameComplete == true)
+      if (Globals.gameComplete == true)
       {
          this.sceneCommandsList = new int[] { -4, -3, -2, -1 };
       }
@@ -508,7 +508,7 @@ public class Scenes
       }
       this.mainPanelCommandsList = new int[] { -1 };
       this.sceneCommandsList = new int[] {};
-      Globals.stats.gameComplete = true;
+      Globals.gameComplete = true;
    }
 
    // Death 0
