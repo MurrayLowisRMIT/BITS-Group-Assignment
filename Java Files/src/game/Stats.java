@@ -3,7 +3,7 @@ package game;
 public class Stats
 {
    // PLAYER STATS-------------------------------------------------------------
-   protected int morality = 0; // example
+   protected int health = 0; // example
 
    // INVENTORY----------------------------------------------------------------
    // copy these into 'updateInventoryArray()' below
@@ -12,7 +12,7 @@ public class Stats
    protected int bandages = 0;
 
    // increase this number if more items are coded into the game
-   protected int[] inventory = new int[20];
+   protected int[] inventory = new int[10];
 
    // add a line to this array for every item coded into the game
    // the number represents its place in the array, not how many the player has
